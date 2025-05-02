@@ -13,11 +13,25 @@
 
     <ScrollViewer>
         <StackPanel>
-            <Label Content="Normal Label" />
-            <Label Content="Highlight Label"
-                   Style="{StaticResource LabelHighlight}" />
-            <Label Content="Highlight Bold Label"
-                   Style="{StaticResource LabelHighlightBold}" />
+            <!--Label-->
+            <StackPanel>
+                <Label Content="Normal Label" />
+                <Label Content="Highlight Label"
+                       Style="{StaticResource LabelHighlight}" />
+                <Label Content="Highlight Bold Label"
+                       Style="{StaticResource LabelHighlightBold}" />
+            </StackPanel>
+
+            <!--TextBox-->
+            <StackPanel Margin="0 16 0 0">
+                <TextBox Text="Normal TextBox"/>
+                <TextBox Text="ReadOnly TextBox"
+                         Style="{StaticResource ReadOnlyTextBoxStyle}"/>
+                <TextBox Text="Multi-Line 1 TextBox&#x0A;Multi-Line 2 TextBox&#x0A;Multi-Line 3 TextBox&#x0A;Multi-Line 4 TextBox&#x0A;"
+                         Style="{StaticResource MultiLineTextBoxStyle}"/>
+                
+            </StackPanel>
+
         </StackPanel>
     </ScrollViewer>
 </wd:DarkWindow>

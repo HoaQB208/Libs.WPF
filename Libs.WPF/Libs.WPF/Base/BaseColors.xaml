@@ -4,5 +4,8 @@
     <SolidColorBrush x:Key="ForegroundColor">White</SolidColorBrush>
     <SolidColorBrush x:Key="HighlightColor">#FCD535</SolidColorBrush>
     <SolidColorBrush x:Key="BackgroundColor">#212529</SolidColorBrush>
-    
+
+    <SolidColorBrush x:Key="InputBackgroundColor">#1A1A1A</SolidColorBrush>
+    <SolidColorBrush x:Key="InputBorderColor">#0A4B8C</SolidColorBrush>
+
 </ResourceDictionary>

@@ -34,13 +34,22 @@
 
             <!--Button-->
             <StackPanel Margin="0 16 0 0"
-                        HorizontalAlignment="Center"
                         Orientation="Horizontal">
-                <Button Content="Big Button"
-                        Style="{StaticResource BigButtonStyle}" />
-                <Button Content="Normal Button"/>
+                <Button Content="Highlight Button"
+                        Style="{StaticResource HighlightButtonStyle}" />
+                <Button Content="Normal Button" />
                 <Button Content="Sub Button"
                         Style="{StaticResource SubButtonStyle}" />
+            </StackPanel>
+
+            <!--CheckBox-->
+            <StackPanel Margin="0 16 0 0">
+                <CheckBox Content="Normal CheckBox"/>
+            </StackPanel>
+
+            <!--RadioButton-->
+            <StackPanel Margin="0 16 0 0">
+                <RadioButton Content="Normal RadioButton" />
             </StackPanel>
         </StackPanel>
     </ScrollViewer>

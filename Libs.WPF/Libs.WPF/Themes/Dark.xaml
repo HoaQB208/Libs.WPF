@@ -10,6 +10,7 @@
         <ResourceDictionary Source="../Styles/GroupBox.xaml" />
         <ResourceDictionary Source="../Styles/ProgressBar.xaml" />
         <ResourceDictionary Source="../Styles/Expander.xaml" />
+        <ResourceDictionary Source="../Styles/ScrollViewer.xaml" />
         <ResourceDictionary Source="../Styles/Page.xaml" />
         <ResourceDictionary Source="../Styles/Window.xaml" />
         <ResourceDictionary Source="../Controls/PackIcons/PackIconStyles.xaml" />

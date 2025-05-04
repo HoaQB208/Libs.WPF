@@ -48,7 +48,8 @@
                                 <RowDefinition />
                             </Grid.RowDefinitions>
                             <!--  Tiêu đề cửa sổ  -->
-                            <Border x:Name="TitleBarBorder">
+                            <Border x:Name="TitleBarBorder"
+                                    Background="{StaticResource BackgroundColor}">
                                 <Grid Margin="0"
                                       Height="28"
                                       x:Name="TitleBar">

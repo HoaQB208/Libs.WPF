@@ -113,8 +113,9 @@
                             Height="20"
                             Background="Transparent">
                         <icons:PackIcon x:Name="icon"
-                                        Width="17"
-                                        Height="17"
+                                        Width="18"
+                                        Height="18"
+                                        Margin="0 1 0 0"
                                         Foreground="DarkGray"
                                         SnapsToDevicePixels="False"
                                         Kind="CameraMeteringCenter" />
@@ -195,6 +196,7 @@
                         <icons:PackIcon x:Name="icon"
                                         Width="18"
                                         Height="18"
+                                        Margin="0 4 0 0"
                                         SnapsToDevicePixels="False"
                                         Foreground="DarkGray"
                                         Kind="WindowMinimize" />

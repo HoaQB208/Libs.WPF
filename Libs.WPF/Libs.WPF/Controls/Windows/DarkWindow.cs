@@ -73,6 +73,18 @@ namespace Libs.WPF.Controls.Windows
 
             if (IsShowSnapshotButton && BtnSnapshot != null) BtnSnapshot.Visibility = Visibility.Visible;
             if (IsShowSmallWindowButton && BtnSmallWindow != null) BtnSmallWindow.Visibility = Visibility.Visible;
+
+            // Sự kiện thu phóng khi click thanh Tiêu đề
+            var titleBar = this.Template.FindName("TitleBarBorder", this);
+            if (titleBar is UIElement bar) bar.MouseLeftButtonDown += TitleBar_MouseLeftButtonDown;
+        }
+
+        private void TitleBar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ClickCount == 2)
+            {
+                this.WindowState = this.WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
+            }
         }
 
         private void Window_MouseMove(object sender, System.Windows.Input.MouseEventArgs e)
@@ -160,7 +172,6 @@ namespace Libs.WPF.Controls.Windows
         {
             this.Close();
         }
-
 
         public void HideMinimizeButton()
         {

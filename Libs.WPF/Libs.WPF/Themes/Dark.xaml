@@ -5,6 +5,12 @@
         <ResourceDictionary Source="../Styles/TextBox.xaml" />
         <ResourceDictionary Source="../Styles/CheckBox.xaml" />
         <ResourceDictionary Source="../Styles/RadioButton.xaml" />
+        <ResourceDictionary Source="../Styles/ScrollBar.xaml" />
+        <ResourceDictionary Source="../Styles/ComboBox.xaml" />
+        <ResourceDictionary Source="../Styles/GroupBox.xaml" />
+        <ResourceDictionary Source="../Styles/ProgressBar.xaml" />
+        <ResourceDictionary Source="../Styles/Expander.xaml" />
+        <ResourceDictionary Source="../Styles/Page.xaml" />
         <ResourceDictionary Source="../Styles/Window.xaml" />
         <ResourceDictionary Source="../Controls/PackIcons/PackIconStyles.xaml" />
         <ResourceDictionary Source="../Converters/ConverterStyles.xaml" />

@@ -56,6 +56,35 @@
             <StackPanel Margin="0 16 0 0">
                 <RadioButton Content="Normal RadioButton" />
             </StackPanel>
+
+            <!--GroupBox-->
+            <StackPanel Margin="0 16 0 0">
+                <GroupBox Header="Normal GroupBox">
+                    
+                </GroupBox>
+            </StackPanel>
+
+            <!--ComboBox-->
+            <StackPanel Margin="0 16 0 0">
+                <ComboBox />
+            </StackPanel>
+
+            <StackPanel Margin="0 16 0 0">
+        
+            </StackPanel>
+
+            <StackPanel Margin="0 16 0 0">
+        
+            </StackPanel>
+
+            <StackPanel Margin="0 16 0 0">
+        
+            </StackPanel>
+
+            <StackPanel Margin="0 16 0 0">
+        
+            </StackPanel>
+
         </StackPanel>
     </ScrollViewer>
 </wd:DarkWindow>

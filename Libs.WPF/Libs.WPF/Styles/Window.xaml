@@ -28,7 +28,6 @@
                 Value="None" />
         <Setter Property="SnapsToDevicePixels"
                 Value="True" />
-
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Window}">
@@ -40,59 +39,58 @@
                                               ShadowDepth="0"
                                               Color="White" />
                         </Grid.Effect>
-
                         <!--  Tạo đường viền bo góc  -->
                         <Border Background="{StaticResource BackgroundColor}"
                                 CornerRadius="8" />
-
-                        <Grid>
+                        <Grid Margin="8 0 8 8">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition />
                             </Grid.RowDefinitions>
-
                             <!--  Tiêu đề cửa sổ  -->
-                            <Grid Margin="8,2,4,2"
-                                  Height="32"
-                                  x:Name="TitleBar">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
+                            <Border x:Name="TitleBarBorder">
+                                <Grid Margin="0"
+                                      Height="28"
+                                      x:Name="TitleBar">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
 
-                                <StackPanel VerticalAlignment="Center"
-                                            Orientation="Horizontal">
-                                    <!--  Icon  -->
-                                    <Image Width="16"
-                                           Height="16"
-                                           Margin="0,0,4,0"
-                                           Source="{TemplateBinding Icon}"
-                                           Stretch="Fill"
-                                           Visibility="{TemplateBinding Icon,
+                                    <StackPanel VerticalAlignment="Center"
+                                                Orientation="Horizontal">
+                                        <!--  Icon  -->
+                                        <Image Width="16"
+                                               Height="16"
+                                               Margin="0,0,4,0"
+                                               Source="{TemplateBinding Icon}"
+                                               Stretch="Fill"
+                                               Visibility="{TemplateBinding Icon,
                                                                      Converter={StaticResource NullToCollapsed}}" />
-                                    <!--  Tiêu đề  -->
-                                    <TextBlock Foreground="DarkGray"
-                                               Text="{TemplateBinding Title}" />
-                                </StackPanel>
+                                        <!--  Tiêu đề  -->
+                                        <TextBlock Foreground="DarkGray"
+                                                   Text="{TemplateBinding Title}" />
+                                    </StackPanel>
 
-                                <!--  Nút điều khiển: Minimize, Maximize, Close  -->
-                                <StackPanel Grid.Column="1"
-                                            Panel.ZIndex="999"
-                                            Height="32"
-                                            VerticalAlignment="Center"
-                                            Orientation="Horizontal">
-                                    <Button x:Name="BtnSnapshot"
-                                            Style="{StaticResource SnapshotStyle}" />
-                                    <Button x:Name="BtnSmallWindow"
-                                            Style="{StaticResource SmallWindowStyle}" />
-                                    <Button x:Name="BtnMinimize"
-                                            Style="{StaticResource MinimizeStyle}" />
-                                    <Button x:Name="BtnMaximize"
-                                            Style="{StaticResource MaximizeStyle}" />
-                                    <Button x:Name="BtnExit"
-                                            Style="{StaticResource CloseStyle}" />
-                                </StackPanel>
-                            </Grid>
+                                    <!--  Nút điều khiển: Minimize, Maximize, Close  -->
+                                    <StackPanel Grid.Column="1"
+                                                Panel.ZIndex="999"
+                                                Height="32"
+                                                VerticalAlignment="Center"
+                                                Orientation="Horizontal">
+                                        <Button x:Name="BtnSnapshot"
+                                                Style="{StaticResource SnapshotStyle}" />
+                                        <Button x:Name="BtnSmallWindow"
+                                                Style="{StaticResource SmallWindowStyle}" />
+                                        <Button x:Name="BtnMinimize"
+                                                Style="{StaticResource MinimizeStyle}" />
+                                        <Button x:Name="BtnMaximize"
+                                                Style="{StaticResource MaximizeStyle}" />
+                                        <Button x:Name="BtnExit"
+                                                Style="{StaticResource CloseStyle}" />
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
 
                             <!--  Các nội dung của Window khi được thiết kế  -->
                             <ContentPresenter Grid.Row="1"

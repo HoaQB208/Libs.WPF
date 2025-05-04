@@ -11,8 +11,6 @@
            TargetType="Button">
         <Setter Property="Background"
                 Value="{StaticResource HighlightColor}" />
-        <Setter Property="Foreground"
-                Value="{StaticResource InverseForegroundColor}" />
         <Setter Property="VerticalAlignment"
                 Value="Top" />
         <Setter Property="VerticalContentAlignment"

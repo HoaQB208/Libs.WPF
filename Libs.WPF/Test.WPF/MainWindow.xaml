@@ -32,6 +32,11 @@
 
             </StackPanel>
 
+            <!--TextBlock-->
+            <StackPanel Margin="0 16 0 0">
+                <TextBlock Text="Normal TextBlock"/>
+            </StackPanel>
+
             <!--Button-->
             <StackPanel Margin="0 16 0 0"
                         Orientation="Horizontal">

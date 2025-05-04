@@ -9,6 +9,10 @@
            TargetType="RadioButton">
         <Setter Property="Foreground"
                 Value="{StaticResource ForegroundColor}" />
+        <Setter Property="VerticalAlignment"
+                Value="Center" />
+        <Setter Property="VerticalContentAlignment"
+                Value="Center" />
         <Setter Property="Cursor"
                 Value="Hand" />
         <Setter Property="Margin"

@@ -2,10 +2,90 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:icons="clr-namespace:Libs.WPF.Controls.PackIcons">
 
-    <Style x:Key="SnapshotStyle"
-           TargetType="{x:Type Button}">
-        <Setter Property="Visibility"
-                Value="Collapsed" />
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Base/BaseColors.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <!--BaseButton-->
+    <Style x:Key="BaseButton"
+           TargetType="Button">
+        <Setter Property="Background"
+                Value="{StaticResource HighlightColor}" />
+        <Setter Property="Foreground"
+                Value="{StaticResource InverseForegroundColor}" />
+        <Setter Property="VerticalAlignment"
+                Value="Top" />
+        <Setter Property="VerticalContentAlignment"
+                Value="Center" />
+        <Setter Property="HorizontalAlignment"
+                Value="Center" />
+        <Setter Property="HorizontalContentAlignment"
+                Value="Center" />
+        <Setter Property="Cursor"
+                Value="Hand" />
+        <Setter Property="Margin"
+                Value="4 0 4 0" />
+        <Setter Property="Padding"
+                Value="8 4 8 4" />
+        <Setter Property="BorderThickness"
+                Value="0" />
+        <Setter Property="FontWeight"
+                Value="Medium" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="4">
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          Margin="{TemplateBinding Padding}" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter Property="Background"
+                                    Value="{StaticResource MouseOverButtonColor}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed"
+                                 Value="True">
+                            <Setter Property="Background"
+                                    Value="{StaticResource PressedButtonColor}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Button"
+           BasedOn="{StaticResource BaseButton}">
+    </Style>
+
+    <!--SubButtonStyle-->
+    <Style x:Key="SubButtonStyle"
+           TargetType="Button"
+           BasedOn="{StaticResource BaseButton}">
+        <Setter Property="FontWeight"
+                Value="Normal" />
+        <Setter Property="Background"
+                Value="{StaticResource SubBackgroundColor}" />
+    </Style>
+
+    <!--BigButtonStyle-->
+    <Style x:Key="BigButtonStyle"
+           TargetType="Button"
+           BasedOn="{StaticResource BaseButton}">
+        <Setter Property="FontWeight"
+                Value="Bold" />
+        <Setter Property="Height"
+                Value="32" />
+    </Style>
+
+    <!--ControlBoxButtonStyle-->
+    <Style x:Key="ControlBoxButtonStyle"
+           TargetType="Button">
         <Setter Property="Height"
                 Value="20" />
         <Setter Property="VerticalAlignment"
@@ -20,10 +100,17 @@
                 Value="0,0,8,0" />
         <Setter Property="Cursor"
                 Value="Hand" />
+    </Style>
+
+    <!--SnapshotStyle-->
+    <Style x:Key="SnapshotStyle"
+           TargetType="Button"
+           BasedOn="{StaticResource ControlBoxButtonStyle}">
+        <Setter Property="Visibility"
+                Value="Collapsed" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
-
                     <Border Width="20"
                             Height="20"
                             Background="Transparent">
@@ -37,7 +124,6 @@
                             <ToolTip Content="Take a screenshot of this window to the clipboard" />
                         </Border.ToolTip>
                     </Border>
-
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver"
                                  Value="True">
@@ -49,37 +135,23 @@
                                  Value="True">
                             <Setter TargetName="icon"
                                     Property="Foreground"
-                                    Value="DarkGray" />
+                                    Value="{StaticResource PressedButtonColor}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
-
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
 
-    <Style x:Key="SmallStyle"
-           TargetType="{x:Type Button}">
+    <!--SmallWindowStyle-->
+    <Style x:Key="SmallWindowStyle"
+           TargetType="Button"
+           BasedOn="{StaticResource ControlBoxButtonStyle}">
         <Setter Property="Visibility"
                 Value="Collapsed" />
-        <Setter Property="VerticalAlignment"
-                Value="Center" />
-        <Setter Property="VerticalContentAlignment"
-                Value="Center" />
-        <Setter Property="Height"
-                Value="20" />
-        <Setter Property="Width"
-                Value="20" />
-        <Setter Property="HorizontalAlignment"
-                Value="Right" />
-        <Setter Property="Margin"
-                Value="0,0,8,0" />
-        <Setter Property="Cursor"
-                Value="Hand" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
-
                     <Border Width="20"
                             Height="20"
                             Background="Transparent">
@@ -93,7 +165,6 @@
                             <ToolTip Content="Take a screenshot of this window to the clipboard" />
                         </Border.ToolTip>
                     </Border>
-
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver"
                                  Value="True">
@@ -105,33 +176,21 @@
                                  Value="True">
                             <Setter TargetName="icon"
                                     Property="Foreground"
-                                    Value="DarkGray" />
+                                    Value="{StaticResource PressedButtonColor}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
-
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-    
+
+    <!--MinimizeStyle-->
     <Style x:Key="MinimizeStyle"
-           TargetType="{x:Type Button}">
-        <Setter Property="Height"
-                Value="20" />
-        <Setter Property="Width"
-                Value="20" />
-        <Setter Property="HorizontalAlignment"
-                Value="Right" />
-        <Setter Property="VerticalAlignment"
-                Value="Center" />
-        <Setter Property="Margin"
-                Value="0,0,2,0" />
-        <Setter Property="Cursor"
-                Value="Hand" />
+           TargetType="Button"
+           BasedOn="{StaticResource ControlBoxButtonStyle}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
-
                     <Border Width="20"
                             Height="20"
                             Background="Transparent">
@@ -145,7 +204,6 @@
                             <ToolTip Content="Minimize" />
                         </Border.ToolTip>
                     </Border>
-
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver"
                                  Value="True">
@@ -157,33 +215,21 @@
                                  Value="True">
                             <Setter TargetName="icon"
                                     Property="Foreground"
-                                    Value="DarkGray" />
+                                    Value="{StaticResource PressedButtonColor}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
-
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
 
+    <!--MaximizeStyle-->
     <Style x:Key="MaximizeStyle"
-           TargetType="{x:Type Button}">
-        <Setter Property="Height"
-                Value="20" />
-        <Setter Property="Width"
-                Value="20" />
-        <Setter Property="HorizontalAlignment"
-                Value="Right" />
-        <Setter Property="VerticalAlignment"
-                Value="Center" />
-        <Setter Property="Margin"
-                Value="0,0,2,0" />
-        <Setter Property="Cursor"
-                Value="Hand" />
+           TargetType="Button"
+           BasedOn="{StaticResource ControlBoxButtonStyle}">
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Button}">
-
+                <ControlTemplate TargetType="Button">
                     <Border Width="20"
                             Height="20"
                             Background="Transparent">
@@ -197,41 +243,41 @@
                             <ToolTip Content="Maximize" />
                         </Border.ToolTip>
                     </Border>
-
                     <ControlTemplate.Triggers>
+                        <!-- Hover -->
                         <Trigger Property="IsMouseOver"
                                  Value="True">
                             <Setter TargetName="icon"
                                     Property="Foreground"
                                     Value="White" />
                         </Trigger>
+                        <!-- Pressed -->
                         <Trigger Property="IsPressed"
                                  Value="True">
                             <Setter TargetName="icon"
                                     Property="Foreground"
-                                    Value="DarkGray" />
+                                    Value="{StaticResource PressedButtonColor}" />
                         </Trigger>
+                        <!-- Check if Window is Maximized -->
+                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=Window}, Path=WindowState}"
+                                     Value="Maximized">
+                            <Setter TargetName="icon"
+                                    Property="Kind"
+                                    Value="WindowRestore" />
+                            <Setter TargetName="icon"
+                                    Property="ToolTip"
+                                    Value="Restore Down" />
+                        </DataTrigger>
                     </ControlTemplate.Triggers>
-
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
 
+    <!--CloseStyle-->
     <Style x:Key="CloseStyle"
-           TargetType="{x:Type Button}">
-        <Setter Property="Height"
-                Value="20" />
-        <Setter Property="Width"
-                Value="20" />
-        <Setter Property="HorizontalAlignment"
-                Value="Right" />
-        <Setter Property="VerticalAlignment"
-                Value="Center" />
-        <Setter Property="Margin"
-                Value="0,0,2,0" />
-        <Setter Property="Cursor"
-                Value="Hand" />
+           TargetType="Button"
+           BasedOn="{StaticResource ControlBoxButtonStyle}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -249,7 +295,6 @@
                             <ToolTip Content="Close" />
                         </Border.ToolTip>
                     </Border>
-
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver"
                                  Value="True">
@@ -261,12 +306,11 @@
                                  Value="True">
                             <Setter TargetName="icon"
                                     Property="Foreground"
-                                    Value="DarkGray" />
+                                    Value="{StaticResource PressedButtonColor}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-
 </ResourceDictionary>

@@ -84,7 +84,7 @@
                                     <Button x:Name="BtnSnapshot"
                                             Style="{StaticResource SnapshotStyle}" />
                                     <Button x:Name="BtnSmallWindow"
-                                            Style="{StaticResource SmallStyle}" />
+                                            Style="{StaticResource SmallWindowStyle}" />
                                     <Button x:Name="BtnMinimize"
                                             Style="{StaticResource MinimizeStyle}" />
                                     <Button x:Name="BtnMaximize"

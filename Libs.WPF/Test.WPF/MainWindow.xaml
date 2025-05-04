@@ -24,14 +24,24 @@
 
             <!--TextBox-->
             <StackPanel Margin="0 16 0 0">
-                <TextBox Text="Normal TextBox"/>
+                <TextBox Text="Normal TextBox" />
                 <TextBox Text="ReadOnly TextBox"
-                         Style="{StaticResource ReadOnlyTextBoxStyle}"/>
+                         Style="{StaticResource ReadOnlyTextBoxStyle}" />
                 <TextBox Text="Multi-Line 1 TextBox&#x0A;Multi-Line 2 TextBox&#x0A;Multi-Line 3 TextBox&#x0A;Multi-Line 4 TextBox&#x0A;"
-                         Style="{StaticResource MultiLineTextBoxStyle}"/>
-                
+                         Style="{StaticResource MultiLineTextBoxStyle}" />
+
             </StackPanel>
 
+            <!--Button-->
+            <StackPanel Margin="0 16 0 0"
+                        HorizontalAlignment="Center"
+                        Orientation="Horizontal">
+                <Button Content="Big Button"
+                        Style="{StaticResource BigButtonStyle}" />
+                <Button Content="Normal Button"/>
+                <Button Content="Sub Button"
+                        Style="{StaticResource SubButtonStyle}" />
+            </StackPanel>
         </StackPanel>
     </ScrollViewer>
 </wd:DarkWindow>

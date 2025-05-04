@@ -8,19 +8,19 @@
                xmlns:local="clr-namespace:Test.WPF"
                mc:Ignorable="d"
                Title="Main Window"
-               Height="450"
+               Height="920"
                Width="800">
 
     <ScrollViewer>
         <StackPanel>
             <!--TextBlock-->
             <StackPanel>
-                <TextBlock Text="Normal TextBlock" />
+                <TextBlock Text="Default TextBlock" />
             </StackPanel>
 
             <!--TextBox-->
             <StackPanel Margin="0 16 0 0">
-                <TextBox Text="Normal TextBox" />
+                <TextBox Text="Default TextBox" />
                 <TextBox Text="ReadOnly TextBox"
                          Style="{StaticResource ReadOnlyTextBoxStyle}" />
                 <TextBox Text="Multi-Line 1 TextBox&#x0A;Multi-Line 2 TextBox&#x0A;Multi-Line 3 TextBox&#x0A;Multi-Line 4 TextBox&#x0A;"
@@ -29,7 +29,7 @@
             
             <!--Label-->
             <StackPanel Margin="0 16 0 0">
-                <Label Content="Normal Label" />
+                <Label Content="Default Label" />
                 <Label Content="Highlight Label"
                        Style="{StaticResource LabelHighlight}" />
                 <Label Content="Highlight Bold Label"
@@ -41,25 +41,37 @@
                         Orientation="Horizontal">
                 <Button Content="Highlight Button"
                         Style="{StaticResource HighlightButtonStyle}" />
-                <Button Content="Normal Button" />
+                <Button Content="Default Button" />
                 <Button Content="Sub Button"
                         Style="{StaticResource SubButtonStyle}" />
             </StackPanel>
 
             <!--CheckBox-->
             <StackPanel Margin="0 16 0 0">
-                <CheckBox Content="Normal CheckBox" />
+                <CheckBox Content="Default CheckBox" />
             </StackPanel>
 
             <!--RadioButton-->
-            <StackPanel Margin="0 16 0 0">
-                <RadioButton Content="Normal RadioButton" />
+            <StackPanel Margin="0 16 0 0"
+                        Orientation="Horizontal">
+                <RadioButton Content="Default RadioButton" />
+                <RadioButton Content="Default RadioButton" />
             </StackPanel>
 
             <!--GroupBox-->
             <StackPanel Margin="0 16 0 0">
-                <GroupBox Header="Normal GroupBox">
+                <GroupBox Header="Default GroupBox"
+                          Height="70">
+                    <StackPanel>
+                    </StackPanel>
+                </GroupBox>
 
+                <GroupBox Header="Panel GroupBox"
+                          Style="{StaticResource PanelGroupBoxStyle}"
+                          Margin="0 8 0 0"
+                          Height="70">
+                    <StackPanel>
+                    </StackPanel>
                 </GroupBox>
             </StackPanel>
 
@@ -68,12 +80,25 @@
                 <ComboBox />
             </StackPanel>
 
+            <!--DataGrid-->
             <StackPanel Margin="0 16 0 0">
-
+                <DataGrid AutoGenerateColumns="False"
+                          CanUserAddRows="False"
+                          CanUserDeleteRows="False"
+                          CanUserResizeRows="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Name"
+                                            Width="200"/>
+                        <DataGridTextColumn Header="Note"/>
+                    </DataGrid.Columns>
+                </DataGrid>
             </StackPanel>
 
+            <!--Expander-->
             <StackPanel Margin="0 16 0 0">
-
+                <Expander Header="Expander">
+                    
+                </Expander>
             </StackPanel>
 
             <StackPanel Margin="0 16 0 0">

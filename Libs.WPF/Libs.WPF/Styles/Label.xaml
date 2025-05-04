@@ -18,15 +18,15 @@
            BasedOn="{StaticResource BaseLabelStyle}">
     </Style>
 
-    <Style x:Key="LabelHighlight"
+    <Style x:Key="HighlightLabelStyle"
            TargetType="Label"
            BasedOn="{StaticResource BaseLabelStyle}">
         <Setter Property="Foreground"
                 Value="{StaticResource HighlightColor}" />
     </Style>
 
-    <Style x:Key="LabelHighlightBold"
-           BasedOn="{StaticResource LabelHighlight}"
+    <Style x:Key="BoldHighlightLabelStyle"
+           BasedOn="{StaticResource HighlightLabelStyle}"
            TargetType="Label">
         <Setter Property="FontWeight"
                 Value="Bold" />

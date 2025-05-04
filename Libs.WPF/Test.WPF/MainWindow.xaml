@@ -14,71 +14,237 @@
     <ScrollViewer>
         <StackPanel>
             <!--TextBlock-->
-            <StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
                 <TextBlock Text="Default TextBlock" />
-            </StackPanel>
+
+                <TextBlock Text="Disable TextBlock"
+                           IsEnabled="False"
+                           Grid.Column="2" />
+            </Grid>
 
             <!--TextBox-->
-            <StackPanel Margin="0 16 0 0">
+            <Grid Margin="0 16 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
                 <TextBox Text="Default TextBox" />
+                <TextBox Text="Default TextBox"
+                         IsEnabled="False"
+                         Grid.Column="2" />
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
                 <TextBox Text="ReadOnly TextBox"
                          Style="{StaticResource ReadOnlyTextBoxStyle}" />
+                <TextBox Text="Disable ReadOnly TextBox"
+                         Style="{StaticResource ReadOnlyTextBoxStyle}"
+                         IsEnabled="False"
+                         Grid.Column="2" />
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
                 <TextBox Text="Multi-Line 1 TextBox&#x0A;Multi-Line 2 TextBox&#x0A;Multi-Line 3 TextBox&#x0A;Multi-Line 4 TextBox&#x0A;"
                          Style="{StaticResource MultiLineTextBoxStyle}" />
-            </StackPanel>
-            
+                <TextBox Text="Multi-Line 1 TextBox&#x0A;Multi-Line 2 TextBox&#x0A;Multi-Line 3 TextBox&#x0A;Multi-Line 4 TextBox&#x0A;"
+                         Style="{StaticResource MultiLineTextBoxStyle}"
+                         IsEnabled="False"
+                         Grid.Column="2" />
+            </Grid>
+
             <!--Label-->
-            <StackPanel Margin="0 16 0 0">
+            <Grid Margin="0 16 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
                 <Label Content="Default Label" />
+                <Label Content="Disable Default Label"
+                       IsEnabled="False"
+                       Grid.Row="1"/>
                 <Label Content="Highlight Label"
-                       Style="{StaticResource LabelHighlight}" />
+                       Style="{StaticResource HighlightLabelStyle}"
+                       Grid.Column="2"/>
+                <Label Content="Disable Highlight Label"
+                       Style="{StaticResource HighlightLabelStyle}"
+                       IsEnabled="False"
+                       Grid.Column="2"
+                       Grid.Row="1"/>
                 <Label Content="Highlight Bold Label"
-                       Style="{StaticResource LabelHighlightBold}" />
-            </StackPanel>
+                       Style="{StaticResource BoldHighlightLabelStyle}"
+                       Grid.Column="4" />
+                <Label Content="Disable Highlight Bold Label"
+                       Style="{StaticResource BoldHighlightLabelStyle}"
+                       IsEnabled="False"
+                       Grid.Column="4"
+                       Grid.Row="1"/>
+            </Grid>
 
             <!--Button-->
-            <StackPanel Margin="0 16 0 0"
-                        Orientation="Horizontal">
+            <Grid Margin="0 16 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="4"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
                 <Button Content="Highlight Button"
                         Style="{StaticResource HighlightButtonStyle}" />
-                <Button Content="Default Button" />
+                <Button Content="Default Button"
+                        Grid.Column="2"/>
                 <Button Content="Sub Button"
-                        Style="{StaticResource SubButtonStyle}" />
-            </StackPanel>
+                        Style="{StaticResource SubButtonStyle}"
+                        Grid.Column="4"/>
+
+                <Button Content="Disable Highlight Button"
+                        Style="{StaticResource HighlightButtonStyle}"
+                        IsEnabled="False"
+                        Grid.Row="2"/>
+                <Button Content="Disable Default Button"
+                        Grid.Column="2"
+                        IsEnabled="False"
+                        Grid.Row="2" />
+                <Button Content="Disable Sub Button"
+                        Style="{StaticResource SubButtonStyle}"
+                        Grid.Column="4"
+                        IsEnabled="False"
+                        Grid.Row="2" />
+            </Grid>
 
             <!--CheckBox-->
-            <StackPanel Margin="0 16 0 0">
+            <Grid Margin="0 16 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
                 <CheckBox Content="Default CheckBox" />
-            </StackPanel>
+                <CheckBox Content="Disable Default CheckBox"
+                          IsEnabled="False"
+                          Grid.Column="2"/>
+            </Grid>
 
             <!--RadioButton-->
-            <StackPanel Margin="0 16 0 0"
-                        Orientation="Horizontal">
+            <Grid Margin="0 16 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
                 <RadioButton Content="Default RadioButton" />
-                <RadioButton Content="Default RadioButton" />
-            </StackPanel>
+                <RadioButton Content="Disable Default RadioButton"
+                             IsEnabled="False"
+                             Grid.Column="2" />
+            </Grid>
 
             <!--GroupBox-->
-            <StackPanel Margin="0 16 0 0">
+            <Grid Margin="0 16 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="4" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
                 <GroupBox Header="Default GroupBox"
-                          Height="70">
+                          Height="70"
+                          Grid.Column="0">
                     <StackPanel>
                     </StackPanel>
                 </GroupBox>
 
                 <GroupBox Header="Panel GroupBox"
                           Style="{StaticResource PanelGroupBoxStyle}"
-                          Margin="0 8 0 0"
-                          Height="70">
+                          Height="70"
+                          Grid.Column="2">
                     <StackPanel>
                     </StackPanel>
                 </GroupBox>
-            </StackPanel>
+
+                <GroupBox Header="Default GroupBox"
+                          Height="70"
+                          Grid.Column="0"
+                          IsEnabled="False"
+                          Grid.Row="2">
+                    <StackPanel>
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Header="Panel GroupBox"
+                          Style="{StaticResource PanelGroupBoxStyle}"
+                          Height="70"
+                          Grid.Column="2"
+                          IsEnabled="False"
+                          Grid.Row="2">
+                    <StackPanel>
+                    </StackPanel>
+                </GroupBox>
+            </Grid>
 
             <!--ComboBox-->
-            <StackPanel Margin="0 16 0 0">
+            <Grid Margin="0 16 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="4" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                
                 <ComboBox />
-            </StackPanel>
+
+                <ComboBox Grid.Column="2" />
+
+                <ComboBox 
+                    IsEnabled="False"
+                    Grid.Row="2"/>
+
+                <ComboBox Grid.Column="2"
+                          IsEnabled="False"
+                          Grid.Row="2" />
+            </Grid>
 
             <!--DataGrid-->
             <StackPanel Margin="0 16 0 0">
@@ -88,8 +254,8 @@
                           CanUserResizeRows="False">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Name"
-                                            Width="200"/>
-                        <DataGridTextColumn Header="Note"/>
+                                            Width="200" />
+                        <DataGridTextColumn Header="Note" />
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>
@@ -97,7 +263,7 @@
             <!--Expander-->
             <StackPanel Margin="0 16 0 0">
                 <Expander Header="Expander">
-                    
+
                 </Expander>
             </StackPanel>
 

@@ -51,6 +51,11 @@
                             <Setter Property="Background"
                                     Value="{StaticResource PressedButtonColor}" />
                         </Trigger>
+                        <Trigger Property="IsEnabled"
+                                 Value="False">
+                            <Setter Property="Background"
+                                    Value="{StaticResource DisableBackgroundColor}" />
+                        </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
@@ -278,6 +283,8 @@
     <Style x:Key="CloseStyle"
            TargetType="Button"
            BasedOn="{StaticResource ControlBoxButtonStyle}">
+        <Setter Property="Margin"
+                Value="0" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">

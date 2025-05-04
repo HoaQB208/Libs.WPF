@@ -12,4 +12,7 @@
     <SolidColorBrush x:Key="InputBackgroundColor">#1A1A1A</SolidColorBrush>
     <SolidColorBrush x:Key="InputBorderColor">#0A4B8C</SolidColorBrush>
 
+    <SolidColorBrush x:Key="DisableColor">#9A9C9E</SolidColorBrush>
+    <SolidColorBrush x:Key="DisableBackgroundColor">LightGray</SolidColorBrush>
+
 </ResourceDictionary>

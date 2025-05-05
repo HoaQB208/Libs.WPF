@@ -8,6 +8,7 @@
         <ResourceDictionary Source="../Styles/ScrollBar.xaml" />
         <ResourceDictionary Source="../Styles/ComboBox.xaml" />
         <ResourceDictionary Source="../Styles/GroupBox.xaml" />
+        <ResourceDictionary Source="../Styles/Expander.xaml" />
         <ResourceDictionary Source="../Styles/DataGrid.xaml" />
         <ResourceDictionary Source="../Styles/ProgressBar.xaml" />
         <ResourceDictionary Source="../Styles/Expander.xaml" />

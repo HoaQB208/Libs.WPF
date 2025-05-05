@@ -293,9 +293,12 @@
                         <DataGridCheckBoxColumn Header="IsMale"
                                                 Binding="{Binding IsMale}"
                                                 Width="50" />
-                        <DataGridComboBoxColumn Header="Skills"
+                        <DataGridComboBoxColumn Header="List Inside"
                                                 ItemsSource="{Binding Skills}"
-                                                Width="*" />
+                                                Width="100" />
+                        <DataGridComboBoxColumn Header="List Outside"
+                                                ItemsSource="{Binding StringList}"
+                                                Width="100" />
                     </DataGrid.Columns>
                 </DataGrid>
 
@@ -312,9 +315,12 @@
                         <DataGridCheckBoxColumn Header="IsMale"
                                                 Binding="{Binding IsMale}"
                                                 Width="50" />
-                        <DataGridComboBoxColumn Header="Skills"
+                        <DataGridComboBoxColumn Header="List Inside"
                                                 ItemsSource="{Binding Skills}"
-                                                Width="*" />
+                                                Width="100" />
+                        <DataGridComboBoxColumn Header="List Outside"
+                                                ItemsSource="{Binding StringList}"
+                                                Width="100" />
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>

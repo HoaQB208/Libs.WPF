@@ -65,9 +65,7 @@
                 <Setter Property="Margin"
                         Value="0 2 0 2" />
                 <Setter Property="BorderThickness"
-                        Value="0" />
-                <Setter Property="BorderBrush"
-                        Value="Red" />
+                        Value="1" />
                 <Setter Property="Foreground"
                         Value="White" />
                 <Setter Property="Background"
@@ -81,6 +79,8 @@
                              Value="True">
                         <Setter Property="Background"
                                 Value="{StaticResource MouseOverItemBorderColor}" />
+                        <Setter Property="Foreground"
+                                Value="Black" />
                     </Trigger>
                 </Style.Triggers>
             </Style>

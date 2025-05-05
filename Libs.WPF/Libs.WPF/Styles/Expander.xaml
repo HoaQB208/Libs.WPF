@@ -1,4 +1,52 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Base/BaseColors.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="Expander">
+        <Setter Property="IsExpanded"
+                Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Expander">
+                    <Border BorderBrush="#569DE5"
+                            BorderThickness="0.3"
+                            Background="{StaticResource BackgroundColor}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+
+                            <!-- ToggleButton không có mũi tên -->
+                            <CheckBox Grid.Row="0"
+                                      IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}}"
+                                      BorderBrush="#569DE5"
+                                      BorderThickness="0.1"
+                                      Height="36"
+                                      Foreground="{StaticResource HighlightColor}"
+                                      Background="{StaticResource BackgroundColor}"
+                                      Content="{TemplateBinding Header}" />
+
+                            <!-- Nội dung của Expander -->
+                            <ContentPresenter Grid.Row="1"
+                                              ContentSource="Content"
+                                              Visibility="Collapsed"
+                                              x:Name="ExpandSite" />
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsExpanded"
+                                 Value="True">
+                            <Setter TargetName="ExpandSite"
+                                    Property="Visibility"
+                                    Value="Visible" /> 
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>

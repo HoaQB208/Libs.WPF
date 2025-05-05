@@ -86,15 +86,15 @@
                 <Label Content="Default Label" />
                 <Label Content="Disable Default Label"
                        IsEnabled="False"
-                       Grid.Row="1"/>
+                       Grid.Row="1" />
                 <Label Content="Highlight Label"
                        Style="{StaticResource HighlightLabelStyle}"
-                       Grid.Column="2"/>
+                       Grid.Column="2" />
                 <Label Content="Disable Highlight Label"
                        Style="{StaticResource HighlightLabelStyle}"
                        IsEnabled="False"
                        Grid.Column="2"
-                       Grid.Row="1"/>
+                       Grid.Row="1" />
                 <Label Content="Highlight Bold Label"
                        Style="{StaticResource BoldHighlightLabelStyle}"
                        Grid.Column="4" />
@@ -102,7 +102,7 @@
                        Style="{StaticResource BoldHighlightLabelStyle}"
                        IsEnabled="False"
                        Grid.Column="4"
-                       Grid.Row="1"/>
+                       Grid.Row="1" />
             </Grid>
 
             <!--Button-->
@@ -116,21 +116,21 @@
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition />
-                    <RowDefinition Height="4"/>
+                    <RowDefinition Height="4" />
                     <RowDefinition />
                 </Grid.RowDefinitions>
                 <Button Content="Highlight Button"
                         Style="{StaticResource HighlightButtonStyle}" />
                 <Button Content="Default Button"
-                        Grid.Column="2"/>
+                        Grid.Column="2" />
                 <Button Content="Sub Button"
                         Style="{StaticResource SubButtonStyle}"
-                        Grid.Column="4"/>
+                        Grid.Column="4" />
 
                 <Button Content="Disable Highlight Button"
                         Style="{StaticResource HighlightButtonStyle}"
                         IsEnabled="False"
-                        Grid.Row="2"/>
+                        Grid.Row="2" />
                 <Button Content="Disable Default Button"
                         Grid.Column="2"
                         IsEnabled="False"
@@ -150,11 +150,23 @@
                     <ColumnDefinition />
                     <ColumnDefinition Width="8" />
                     <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <CheckBox Content="Default CheckBox" />
+                <CheckBox Content="Default CheckBox"
+                          IsChecked="True"
+                          Grid.Column="2" />
+
+
                 <CheckBox Content="Disable Default CheckBox"
                           IsEnabled="False"
-                          Grid.Column="2"/>
+                          Grid.Column="4" />
+
+                <CheckBox Content="Disable Default CheckBox"
+                          IsEnabled="False"
+                          IsChecked="True"
+                          Grid.Column="6" />
             </Grid>
 
             <!--RadioButton-->
@@ -165,11 +177,22 @@
                     <ColumnDefinition />
                     <ColumnDefinition Width="8" />
                     <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <RadioButton Content="Default RadioButton" />
-                <RadioButton Content="Disable Default RadioButton"
-                             IsEnabled="False"
+                <RadioButton Content="Checked RadioButton"
+                             IsChecked="True"
                              Grid.Column="2" />
+
+                <RadioButton Content="Disable RadioButton"
+                             IsEnabled="False"
+                             Grid.Column="4" />
+
+                <RadioButton Content="Checked RadioButton"
+                             IsEnabled="False"
+                             IsChecked="True"
+                             Grid.Column="6" />
             </Grid>
 
             <!--GroupBox-->
@@ -232,18 +255,24 @@
                     <RowDefinition Height="4" />
                     <RowDefinition />
                 </Grid.RowDefinitions>
-                
-                <ComboBox />
 
-                <ComboBox Grid.Column="2" />
+                <ComboBox ItemsSource="{Binding StringList}"
+                          SelectedItem="{Binding SelectedStringItem, UpdateSourceTrigger=PropertyChanged}"/>
 
-                <ComboBox 
-                    IsEnabled="False"
-                    Grid.Row="2"/>
+                <ComboBox ItemsSource="{Binding StringList}"
+                          SelectedItem="{Binding SelectedStringItem, UpdateSourceTrigger=PropertyChanged}"
+                          Grid.Column="2" />
 
-                <ComboBox Grid.Column="2"
-                          IsEnabled="False"
-                          Grid.Row="2" />
+                <ComboBox  ItemsSource="{Binding StringList}"
+                           SelectedItem="{Binding SelectedStringItem, UpdateSourceTrigger=PropertyChanged}"
+                           IsEnabled="False"
+                           Grid.Row="2" />
+
+                <ComboBox  ItemsSource="{Binding StringList}"
+                           SelectedItem="{Binding SelectedStringItem, UpdateSourceTrigger=PropertyChanged}"
+                           Grid.Column="2"
+                           IsEnabled="False"
+                           Grid.Row="2" />
             </Grid>
 
             <!--DataGrid-->

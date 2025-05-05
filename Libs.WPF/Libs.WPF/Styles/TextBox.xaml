@@ -26,14 +26,15 @@
         <Setter Property="BorderBrush"
                 Value="{StaticResource InputBorderColor}" />
         <Setter Property="BorderThickness"
-                Value="0.5" />
+                Value="1" />
     </Style>
 
     <Style TargetType="TextBox"
            BasedOn="{StaticResource BaseTextBoxStyle}">
     </Style>
 
-    <Style x:Key="ReadOnlyTextBoxStyle" TargetType="TextBox"
+    <Style x:Key="ReadOnlyTextBoxStyle"
+           TargetType="TextBox"
            BasedOn="{StaticResource BaseTextBoxStyle}">
         <Setter Property="BorderThickness"
                 Value="0" />

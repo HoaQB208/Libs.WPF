@@ -8,7 +8,7 @@
                xmlns:local="clr-namespace:Test.WPF"
                mc:Ignorable="d"
                Title="Main Window"
-               Height="920"
+               Height="1680"
                Width="800">
 
     <ScrollViewer>
@@ -257,7 +257,7 @@
                 </Grid.RowDefinitions>
 
                 <ComboBox ItemsSource="{Binding StringList}"
-                          SelectedItem="{Binding SelectedStringItem, UpdateSourceTrigger=PropertyChanged}"/>
+                          SelectedItem="{Binding SelectedStringItem, UpdateSourceTrigger=PropertyChanged}" />
 
                 <ComboBox ItemsSource="{Binding StringList}"
                           SelectedItem="{Binding SelectedStringItem, UpdateSourceTrigger=PropertyChanged}"
@@ -276,18 +276,48 @@
             </Grid>
 
             <!--DataGrid-->
-            <StackPanel Margin="0 16 0 0">
-                <DataGrid AutoGenerateColumns="False"
-                          CanUserAddRows="False"
-                          CanUserDeleteRows="False"
-                          CanUserResizeRows="False">
+            <Grid Margin="0 16 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <DataGrid ItemsSource="{Binding SampleItems}">
                     <DataGrid.Columns>
+                        <DataGridTextColumn Header="Id"
+                                            Binding="{Binding Id}"
+                                            Width="50" />
                         <DataGridTextColumn Header="Name"
+                                            Binding="{Binding Name}"
                                             Width="200" />
-                        <DataGridTextColumn Header="Note" />
+                        <DataGridCheckBoxColumn Header="IsMale"
+                                                Binding="{Binding IsMale}"
+                                                Width="50" />
+                        <DataGridComboBoxColumn Header="Skills"
+                                                ItemsSource="{Binding Skills}"
+                                                Width="*" />
                     </DataGrid.Columns>
                 </DataGrid>
-            </StackPanel>
+
+                <DataGrid ItemsSource="{Binding SampleItems}"
+                          IsEnabled="False"
+                          Grid.Column="2">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Id"
+                                            Binding="{Binding Id}"
+                                            Width="50" />
+                        <DataGridTextColumn Header="Name"
+                                            Binding="{Binding Name}"
+                                            Width="200" />
+                        <DataGridCheckBoxColumn Header="IsMale"
+                                                Binding="{Binding IsMale}"
+                                                Width="50" />
+                        <DataGridComboBoxColumn Header="Skills"
+                                                ItemsSource="{Binding Skills}"
+                                                Width="*" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
 
             <!--Expander-->
             <StackPanel Margin="0 16 0 0">

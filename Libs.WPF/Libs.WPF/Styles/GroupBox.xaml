@@ -13,14 +13,14 @@
                 <ControlTemplate TargetType="GroupBox">
                     <Border BorderBrush="#569DE5"
                             BorderThickness="0.5"
-                            Margin="0 15 0 0"
+                            Margin="0 14 0 0"
                             Background="{StaticResource BackgroundColor}">
                         <DockPanel>
                             <Label Content="{TemplateBinding Header}"
                                    DockPanel.Dock="Top"
                                    Foreground="{TemplateBinding Foreground}"
                                    FontWeight="Medium"
-                                   Margin="0 -15 0 0"
+                                   Margin="0 -14 0 0"
                                    Padding="8 0 8 0"
                                    Background="{StaticResource BackgroundColor}"
                                    HorizontalAlignment="Center" />

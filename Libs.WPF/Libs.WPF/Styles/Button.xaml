@@ -70,8 +70,6 @@
     <Style x:Key="SubButtonStyle"
            TargetType="Button"
            BasedOn="{StaticResource BaseButton}">
-        <Setter Property="FontWeight"
-                Value="Normal" />
         <Setter Property="Background"
                 Value="{StaticResource SubBackgroundColor}" />
     </Style>

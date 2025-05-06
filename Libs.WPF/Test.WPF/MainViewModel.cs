@@ -7,7 +7,7 @@ namespace Test.WPF
     {
         public MainViewModel()
         {
-            _SelectedStringItem = StringList[0];
+            _SelectedString = StringList[0];
         }
 
         public List<string> StringList { get; } = new List<string>()
@@ -21,14 +21,14 @@ namespace Test.WPF
             "Sample 7",
         };
 
-        private string _SelectedStringItem;
-        public string SelectedStringItem
+        private string _SelectedString;
+        public string SelectedString
         {
-            get { return _SelectedStringItem; }
+            get { return _SelectedString; }
             set
             {
-                _SelectedStringItem = value;
-                OnPropertyChanged(nameof(SelectedStringItem));
+                _SelectedString = value;
+                OnPropertyChanged(nameof(SelectedString));
             }
         }
 

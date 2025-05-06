@@ -294,13 +294,35 @@
                         <DataGridCheckBoxColumn Header="IsMale"
                                                 Binding="{Binding IsMale}"
                                                 Width="50" />
-                        <DataGridComboBoxColumn Header="List Inside"
-                                                ItemsSource="{Binding Skills}"
-                                                SelectedItemBinding="{Binding SelectedSkill}"
-                                                Width="*" />
-                        <DataGridComboBoxColumn Header="List Outside"
-                                                ItemsSource="{Binding StringList}"
-                                                Width="*" />
+                        <!--List Inside-->
+                        <DataGridTemplateColumn Header="List Inside"
+                                                Width="*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding SelectedSkill}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                            <DataGridTemplateColumn.CellEditingTemplate>
+                                <DataTemplate>
+                                    <ComboBox ItemsSource="{Binding DataContext.Skills, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellEditingTemplate>
+                        </DataGridTemplateColumn>
+
+                        <!--List Outside-->
+                        <DataGridTemplateColumn Header="List Outside"
+                                                Width="*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding SelectedString}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                            <DataGridTemplateColumn.CellEditingTemplate>
+                                <DataTemplate>
+                                    <ComboBox ItemsSource="{Binding DataContext.StringList, RelativeSource={RelativeSource AncestorType=DataGrid}}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellEditingTemplate>
+                        </DataGridTemplateColumn>
                     </DataGrid.Columns>
                 </DataGrid>
 

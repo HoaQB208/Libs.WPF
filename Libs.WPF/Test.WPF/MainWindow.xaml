@@ -11,337 +11,338 @@
                Height="1680"
                Width="1200">
 
-        <ScrollViewer>
-            <StackPanel>
-                <!--TextBlock-->
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition Width="8" />
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Text="Default TextBlock" />
+    <ScrollViewer>
+        <StackPanel>
+            <!--TextBlock-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Default TextBlock" />
 
-                    <TextBlock Text="Disable TextBlock"
-                               IsEnabled="False"
-                               Grid.Column="2" />
-                </Grid>
-
-                <!--TextBox-->
-                <Grid Margin="0 16 0 0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition Width="8" />
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <TextBox Text="Default TextBox" />
-                    <TextBox Text="Default TextBox"
-                             IsEnabled="False"
-                             Grid.Column="2" />
-                </Grid>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition Width="8" />
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <TextBox Text="ReadOnly TextBox"
-                             Style="{StaticResource ReadOnlyTextBoxStyle}" />
-                    <TextBox Text="Disable ReadOnly TextBox"
-                             Style="{StaticResource ReadOnlyTextBoxStyle}"
-                             IsEnabled="False"
-                             Grid.Column="2" />
-                </Grid>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition Width="8" />
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <TextBox Text="Multi-Line 1 TextBox&#x0A;Multi-Line 2 TextBox&#x0A;Multi-Line 3 TextBox&#x0A;Multi-Line 4 TextBox&#x0A;"
-                             Style="{StaticResource MultiLineTextBoxStyle}" />
-                    <TextBox Text="Multi-Line 1 TextBox&#x0A;Multi-Line 2 TextBox&#x0A;Multi-Line 3 TextBox&#x0A;Multi-Line 4 TextBox&#x0A;"
-                             Style="{StaticResource MultiLineTextBoxStyle}"
-                             IsEnabled="False"
-                             Grid.Column="2" />
-                </Grid>
-
-                <!--Label-->
-                <Grid Margin="0 16 0 0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition Width="8" />
-                        <ColumnDefinition />
-                        <ColumnDefinition Width="8" />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition />
-                        <RowDefinition />
-                    </Grid.RowDefinitions>
-                    <Label Content="Default Label" />
-                    <Label Content="Disable Default Label"
+                <TextBlock Text="Disable TextBlock"
                            IsEnabled="False"
-                           Grid.Row="1" />
-                    <Label Content="Highlight Label"
-                           Style="{StaticResource HighlightLabelStyle}"
                            Grid.Column="2" />
-                    <Label Content="Disable Highlight Label"
-                           Style="{StaticResource HighlightLabelStyle}"
+            </Grid>
+
+            <!--TextBox-->
+            <Grid Margin="0 16 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBox Text="Default TextBox" />
+                <TextBox Text="Default TextBox"
+                         IsEnabled="False"
+                         Grid.Column="2" />
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBox Text="ReadOnly TextBox"
+                         Style="{StaticResource ReadOnlyTextBoxStyle}" />
+                <TextBox Text="Disable ReadOnly TextBox"
+                         Style="{StaticResource ReadOnlyTextBoxStyle}"
+                         IsEnabled="False"
+                         Grid.Column="2" />
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBox Text="Multi-Line 1 TextBox&#x0A;Multi-Line 2 TextBox&#x0A;Multi-Line 3 TextBox&#x0A;Multi-Line 4 TextBox&#x0A;"
+                         Style="{StaticResource MultiLineTextBoxStyle}" />
+                <TextBox Text="Multi-Line 1 TextBox&#x0A;Multi-Line 2 TextBox&#x0A;Multi-Line 3 TextBox&#x0A;Multi-Line 4 TextBox&#x0A;"
+                         Style="{StaticResource MultiLineTextBoxStyle}"
+                         IsEnabled="False"
+                         Grid.Column="2" />
+            </Grid>
+
+            <!--Label-->
+            <Grid Margin="0 16 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Label Content="Default Label" />
+                <Label Content="Disable Default Label"
+                       IsEnabled="False"
+                       Grid.Row="1" />
+                <Label Content="Highlight Label"
+                       Style="{StaticResource HighlightLabelStyle}"
+                       Grid.Column="2" />
+                <Label Content="Disable Highlight Label"
+                       Style="{StaticResource HighlightLabelStyle}"
+                       IsEnabled="False"
+                       Grid.Column="2"
+                       Grid.Row="1" />
+                <Label Content="Highlight Bold Label"
+                       Style="{StaticResource BoldHighlightLabelStyle}"
+                       Grid.Column="4" />
+                <Label Content="Disable Highlight Bold Label"
+                       Style="{StaticResource BoldHighlightLabelStyle}"
+                       IsEnabled="False"
+                       Grid.Column="4"
+                       Grid.Row="1" />
+            </Grid>
+
+            <!--Button-->
+            <Grid Margin="0 16 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="4" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Button Content="Highlight Button"
+                        Style="{StaticResource HighlightButtonStyle}" />
+                <Button Content="Default Button"
+                        Grid.Column="2" />
+                <Button Content="Sub Button"
+                        Style="{StaticResource SubButtonStyle}"
+                        Grid.Column="4" />
+
+                <Button Content="Disable Highlight Button"
+                        Style="{StaticResource HighlightButtonStyle}"
+                        IsEnabled="False"
+                        Grid.Row="2" />
+                <Button Content="Disable Default Button"
+                        Grid.Column="2"
+                        IsEnabled="False"
+                        Grid.Row="2" />
+                <Button Content="Disable Sub Button"
+                        Style="{StaticResource SubButtonStyle}"
+                        Grid.Column="4"
+                        IsEnabled="False"
+                        Grid.Row="2" />
+            </Grid>
+
+            <!--CheckBox-->
+            <Grid Margin="0 16 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <CheckBox Content="Default CheckBox" />
+                <CheckBox Content="Default CheckBox"
+                          IsChecked="True"
+                          Grid.Column="2" />
+
+
+                <CheckBox Content="Disable Default CheckBox"
+                          IsEnabled="False"
+                          Grid.Column="4" />
+
+                <CheckBox Content="Disable Default CheckBox"
+                          IsEnabled="False"
+                          IsChecked="True"
+                          Grid.Column="6" />
+            </Grid>
+
+            <!--RadioButton-->
+            <Grid Margin="0 16 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <RadioButton Content="Default RadioButton" />
+                <RadioButton Content="Checked RadioButton"
+                             IsChecked="True"
+                             Grid.Column="2" />
+
+                <RadioButton Content="Disable RadioButton"
+                             IsEnabled="False"
+                             Grid.Column="4" />
+
+                <RadioButton Content="Checked RadioButton"
+                             IsEnabled="False"
+                             IsChecked="True"
+                             Grid.Column="6" />
+            </Grid>
+
+            <!--GroupBox-->
+            <Grid Margin="0 16 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="4" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <GroupBox Header="Default GroupBox"
+                          Height="70"
+                          Grid.Column="0">
+                    <StackPanel>
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Header="Panel GroupBox"
+                          Style="{StaticResource PanelGroupBoxStyle}"
+                          Height="70"
+                          Grid.Column="2">
+                    <StackPanel>
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Header="Default GroupBox"
+                          Height="70"
+                          Grid.Column="0"
+                          IsEnabled="False"
+                          Grid.Row="2">
+                    <StackPanel>
+                    </StackPanel>
+                </GroupBox>
+
+                <GroupBox Header="Panel GroupBox"
+                          Style="{StaticResource PanelGroupBoxStyle}"
+                          Height="70"
+                          Grid.Column="2"
+                          IsEnabled="False"
+                          Grid.Row="2">
+                    <StackPanel>
+                    </StackPanel>
+                </GroupBox>
+            </Grid>
+
+            <!--ComboBox-->
+            <Grid Margin="0 16 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="4" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <ComboBox ItemsSource="{Binding StringList}"
+                          SelectedItem="{Binding SelectedStringItem, UpdateSourceTrigger=PropertyChanged}" />
+
+                <ComboBox ItemsSource="{Binding StringList}"
+                          SelectedItem="{Binding SelectedStringItem, UpdateSourceTrigger=PropertyChanged}"
+                          Grid.Column="2" />
+
+                <ComboBox  ItemsSource="{Binding StringList}"
+                           SelectedItem="{Binding SelectedStringItem, UpdateSourceTrigger=PropertyChanged}"
                            IsEnabled="False"
+                           Grid.Row="2" />
+
+                <ComboBox  ItemsSource="{Binding StringList}"
+                           SelectedItem="{Binding SelectedStringItem, UpdateSourceTrigger=PropertyChanged}"
                            Grid.Column="2"
-                           Grid.Row="1" />
-                    <Label Content="Highlight Bold Label"
-                           Style="{StaticResource BoldHighlightLabelStyle}"
-                           Grid.Column="4" />
-                    <Label Content="Disable Highlight Bold Label"
-                           Style="{StaticResource BoldHighlightLabelStyle}"
                            IsEnabled="False"
-                           Grid.Column="4"
-                           Grid.Row="1" />
-                </Grid>
-
-                <!--Button-->
-                <Grid Margin="0 16 0 0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition Width="8" />
-                        <ColumnDefinition />
-                        <ColumnDefinition Width="8" />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition />
-                        <RowDefinition Height="4" />
-                        <RowDefinition />
-                    </Grid.RowDefinitions>
-                    <Button Content="Highlight Button"
-                            Style="{StaticResource HighlightButtonStyle}" />
-                    <Button Content="Default Button"
-                            Grid.Column="2" />
-                    <Button Content="Sub Button"
-                            Style="{StaticResource SubButtonStyle}"
-                            Grid.Column="4" />
-
-                    <Button Content="Disable Highlight Button"
-                            Style="{StaticResource HighlightButtonStyle}"
-                            IsEnabled="False"
-                            Grid.Row="2" />
-                    <Button Content="Disable Default Button"
-                            Grid.Column="2"
-                            IsEnabled="False"
-                            Grid.Row="2" />
-                    <Button Content="Disable Sub Button"
-                            Style="{StaticResource SubButtonStyle}"
-                            Grid.Column="4"
-                            IsEnabled="False"
-                            Grid.Row="2" />
-                </Grid>
-
-                <!--CheckBox-->
-                <Grid Margin="0 16 0 0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition Width="8" />
-                        <ColumnDefinition />
-                        <ColumnDefinition Width="8" />
-                        <ColumnDefinition />
-                        <ColumnDefinition Width="8" />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <CheckBox Content="Default CheckBox" />
-                    <CheckBox Content="Default CheckBox"
-                              IsChecked="True"
-                              Grid.Column="2" />
+                           Grid.Row="2" />
+            </Grid>
 
 
-                    <CheckBox Content="Disable Default CheckBox"
-                              IsEnabled="False"
-                              Grid.Column="4" />
-
-                    <CheckBox Content="Disable Default CheckBox"
-                              IsEnabled="False"
-                              IsChecked="True"
-                              Grid.Column="6" />
-                </Grid>
-
-                <!--RadioButton-->
-                <Grid Margin="0 16 0 0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition Width="8" />
-                        <ColumnDefinition />
-                        <ColumnDefinition Width="8" />
-                        <ColumnDefinition />
-                        <ColumnDefinition Width="8" />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <RadioButton Content="Default RadioButton" />
-                    <RadioButton Content="Checked RadioButton"
-                                 IsChecked="True"
-                                 Grid.Column="2" />
-
-                    <RadioButton Content="Disable RadioButton"
-                                 IsEnabled="False"
-                                 Grid.Column="4" />
-
-                    <RadioButton Content="Checked RadioButton"
-                                 IsEnabled="False"
-                                 IsChecked="True"
-                                 Grid.Column="6" />
-                </Grid>
-
-                <!--GroupBox-->
-                <Grid Margin="0 16 0 0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition Width="8" />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition />
-                        <RowDefinition Height="4" />
-                        <RowDefinition />
-                    </Grid.RowDefinitions>
-
-                    <GroupBox Header="Default GroupBox"
-                              Height="70"
-                              Grid.Column="0">
-                        <StackPanel>
-                        </StackPanel>
-                    </GroupBox>
-
-                    <GroupBox Header="Panel GroupBox"
-                              Style="{StaticResource PanelGroupBoxStyle}"
-                              Height="70"
-                              Grid.Column="2">
-                        <StackPanel>
-                        </StackPanel>
-                    </GroupBox>
-
-                    <GroupBox Header="Default GroupBox"
-                              Height="70"
-                              Grid.Column="0"
-                              IsEnabled="False"
-                              Grid.Row="2">
-                        <StackPanel>
-                        </StackPanel>
-                    </GroupBox>
-
-                    <GroupBox Header="Panel GroupBox"
-                              Style="{StaticResource PanelGroupBoxStyle}"
-                              Height="70"
-                              Grid.Column="2"
-                              IsEnabled="False"
-                              Grid.Row="2">
-                        <StackPanel>
-                        </StackPanel>
-                    </GroupBox>
-                </Grid>
-
-                <!--ComboBox-->
-                <Grid Margin="0 16 0 0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition Width="8" />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition />
-                        <RowDefinition Height="4" />
-                        <RowDefinition />
-                    </Grid.RowDefinitions>
-
-                    <ComboBox ItemsSource="{Binding StringList}"
-                              SelectedItem="{Binding SelectedStringItem, UpdateSourceTrigger=PropertyChanged}" />
-
-                    <ComboBox ItemsSource="{Binding StringList}"
-                              SelectedItem="{Binding SelectedStringItem, UpdateSourceTrigger=PropertyChanged}"
-                              Grid.Column="2" />
-
-                    <ComboBox  ItemsSource="{Binding StringList}"
-                               SelectedItem="{Binding SelectedStringItem, UpdateSourceTrigger=PropertyChanged}"
-                               IsEnabled="False"
-                               Grid.Row="2" />
-
-                    <ComboBox  ItemsSource="{Binding StringList}"
-                               SelectedItem="{Binding SelectedStringItem, UpdateSourceTrigger=PropertyChanged}"
-                               Grid.Column="2"
-                               IsEnabled="False"
-                               Grid.Row="2" />
-                </Grid>
-
-
-                <!--DataGrid-->
-                <Grid Margin="0 16 0 0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition Width="8" />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <DataGrid ItemsSource="{Binding SampleItems}">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="Id"
-                                                Binding="{Binding Id}"
+            <!--DataGrid-->
+            <Grid Margin="0 16 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <DataGrid ItemsSource="{Binding SampleItems}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Id"
+                                            Binding="{Binding Id}"
+                                            Width="50" />
+                        <DataGridTextColumn Header="Name"
+                                            Binding="{Binding Name}"
+                                            Width="200" />
+                        <DataGridCheckBoxColumn Header="IsMale"
+                                                Binding="{Binding IsMale}"
                                                 Width="50" />
-                            <DataGridTextColumn Header="Name"
-                                                Binding="{Binding Name}"
-                                                Width="200" />
-                            <DataGridCheckBoxColumn Header="IsMale"
-                                                    Binding="{Binding IsMale}"
-                                                    Width="50" />
-                            <DataGridComboBoxColumn Header="List Inside"
-                                                    ItemsSource="{Binding Skills}"
-                                                    Width="*" />
-                            <DataGridComboBoxColumn Header="List Outside"
-                                                    ItemsSource="{Binding StringList}"
-                                                    Width="*" />
-                        </DataGrid.Columns>
-                    </DataGrid>
+                        <DataGridComboBoxColumn Header="List Inside"
+                                                ItemsSource="{Binding Skills}"
+                                                SelectedItemBinding="{Binding SelectedSkill}"
+                                                Width="*" />
+                        <DataGridComboBoxColumn Header="List Outside"
+                                                ItemsSource="{Binding StringList}"
+                                                Width="*" />
+                    </DataGrid.Columns>
+                </DataGrid>
 
-                    <DataGrid ItemsSource="{Binding SampleItems}"
-                              IsEnabled="False"
-                              Grid.Column="2">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="Id"
-                                                Binding="{Binding Id}"
+                <DataGrid ItemsSource="{Binding SampleItems}"
+                          IsEnabled="False"
+                          Grid.Column="2">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Id"
+                                            Binding="{Binding Id}"
+                                            Width="50" />
+                        <DataGridTextColumn Header="Name"
+                                            Binding="{Binding Name}"
+                                            Width="200" />
+                        <DataGridCheckBoxColumn Header="IsMale"
+                                                Binding="{Binding IsMale}"
                                                 Width="50" />
-                            <DataGridTextColumn Header="Name"
-                                                Binding="{Binding Name}"
-                                                Width="200" />
-                            <DataGridCheckBoxColumn Header="IsMale"
-                                                    Binding="{Binding IsMale}"
-                                                    Width="50" />
-                            <DataGridComboBoxColumn Header="List Inside"
-                                                    ItemsSource="{Binding Skills}"
-                                                    Width="100" />
-                            <DataGridComboBoxColumn Header="List Outside"
-                                                    ItemsSource="{Binding StringList}"
-                                                    Width="*" />
-                        </DataGrid.Columns>
-                    </DataGrid>
-                </Grid>
+                        <DataGridComboBoxColumn Header="List Inside"
+                                                ItemsSource="{Binding Skills}"
+                                                Width="100" />
+                        <DataGridComboBoxColumn Header="List Outside"
+                                                ItemsSource="{Binding StringList}"
+                                                Width="*" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
 
-                <!--Expander-->
-                <StackPanel Margin="0 16 0 0">
-                    <Expander Header="Expander">
+            <!--Expander-->
+            <StackPanel Margin="0 16 0 0">
+                <Expander Header="Expander">
 
-                    </Expander>
-                </StackPanel>
+                </Expander>
+            </StackPanel>
 
-                <StackPanel Margin="0 16 0 0">
-
-                </StackPanel>
-
-                <StackPanel Margin="0 16 0 0">
-
-                </StackPanel>
+            <StackPanel Margin="0 16 0 0">
 
             </StackPanel>
-        </ScrollViewer>
-            
+
+            <StackPanel Margin="0 16 0 0">
+
+            </StackPanel>
+
+        </StackPanel>
+    </ScrollViewer>
+
 </wd:DarkWindow>

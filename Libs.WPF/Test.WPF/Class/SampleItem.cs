@@ -1,12 +1,26 @@
-﻿namespace Test.WPF.Class
+﻿using Libs.WPF.MVVM;
+
+namespace Test.WPF.Class
 {
-    class SampleItem
+    class SampleItem : ViewModelBase
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public bool IsMale { get; set; }
 
         public List<string> Skills { get; set; }
+
+        private string _SelectedSkill;
+        public string SelectedSkill
+        {
+            get { return _SelectedSkill; }
+            set
+            {
+                _SelectedSkill = value;
+                OnPropertyChanged(nameof(SelectedSkill));
+            }
+        }
+
 
         public SampleItem(int id, string name, bool isMale)
         {
@@ -19,6 +33,8 @@
                 "AI",
                 "Unreal"
             };
+
+            _SelectedSkill = Skills[0];
         }
     }
 }

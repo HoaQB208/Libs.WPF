@@ -10,7 +10,7 @@
         <Setter Property="AcceptsReturn"
                 Value="False" />
         <Setter Property="VerticalAlignment"
-                Value="Center" />
+                Value="Stretch" />
         <Setter Property="VerticalContentAlignment"
                 Value="Center" />
         <Setter Property="HorizontalAlignment"
@@ -51,8 +51,6 @@
            BasedOn="{StaticResource BaseTextBoxStyle}">
         <Setter Property="AcceptsReturn"
                 Value="True" />
-        <Setter Property="Height"
-                Value="60" />
         <Setter Property="VerticalContentAlignment"
                 Value="Top" />
         <Setter Property="VerticalScrollBarVisibility"
@@ -60,6 +58,5 @@
         <Setter Property="HorizontalScrollBarVisibility"
                 Value="Auto" />
     </Style>
-
 
 </ResourceDictionary>

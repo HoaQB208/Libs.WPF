@@ -39,7 +39,7 @@
         <Setter Property="BorderThickness"
                 Value="0.3" />
         <Setter Property="Background"
-                Value="Transparent" />
+                Value="#181A20" />
         <Setter Property="Foreground"
                 Value="{StaticResource ForegroundColor}" />
         <Setter Property="ScrollViewer.CanContentScroll"
@@ -98,7 +98,7 @@
                         <Trigger Property="IsSelected"
                                  Value="True">
                             <Setter Property="Background"
-                                    Value="{StaticResource HighlightColor}" />
+                                    Value="{StaticResource MouseOverItemBorderColor}" />
                             <Setter Property="Foreground"
                                     Value="Black" />
                         </Trigger>
@@ -123,14 +123,14 @@
                         <Trigger Property="IsSelected"
                                  Value="True">
                             <Setter Property="Background"
-                                    Value="{StaticResource HighlightColor}" />
+                                    Value="{StaticResource MouseOverItemBorderColor}" />
                         </Trigger>
                         <Trigger Property="IsMouseOver"
                                  Value="True">
                             <Setter Property="Background"
-                                    Value="{StaticResource MouseOverItemBorderColor}" />
+                                    Value="#1E2329" />
                             <Setter Property="Foreground"
-                                    Value="Black" />
+                                    Value="White" />
                         </Trigger>
                     </Style.Triggers>
                 </Style>

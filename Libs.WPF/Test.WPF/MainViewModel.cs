@@ -37,6 +37,7 @@ namespace Test.WPF
             new(1, "Pham Thai Hoa", true),
             new(2, "Nguyễn Thị B", false),
             new(10, "Trần Văn Nam", true),
+            new(11, "Trần Văn C", true),
         };
     }
 }

@@ -13,6 +13,8 @@
                 Value="Center" />
         <Setter Property="VerticalContentAlignment"
                 Value="Center" />
+        <Setter Property="HorizontalAlignment"
+                Value="Left" />
         <Setter Property="Cursor"
                 Value="Hand" />
         <Setter Property="Margin"
@@ -21,6 +23,83 @@
 
     <Style TargetType="RadioButton"
            BasedOn="{StaticResource BaseRadioButtonStyle}">
+    </Style>
+
+    <!--MenuRadioButtonStyle-->
+    <Style x:Key="MenuRadioButtonStyle"
+           TargetType="RadioButton"
+           BasedOn="{StaticResource BaseRadioButtonStyle}">
+        <Setter Property="Margin"
+                Value="0" />
+        <Setter Property="HorizontalAlignment"
+                Value="Stretch" />
+        <Setter Property="Height"
+                Value="48" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RadioButton">
+                    <Border x:Name="border"
+                            BorderThickness="0">
+                        <Border.Background>
+                            <SolidColorBrush x:Name="BorderBackground"
+                                             Color="#272B2F" />
+                        </Border.Background>
+                        <Grid>
+                            <Border x:Name="HighlightChecked"
+                                    Width="4"
+                                    Height="35"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    Background="{StaticResource HighlightColor}"
+                                    CornerRadius="2"
+                                    Visibility="Hidden" />
+                            <ContentPresenter />
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter TargetName="HighlightChecked"
+                                    Property="Visibility"
+                                    Value="Visible" />
+                        </Trigger>
+                        <EventTrigger RoutedEvent="Border.MouseEnter"
+                                      SourceName="border">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="BorderBackground"
+                                                    Storyboard.TargetProperty="Color"
+                                                    From="#272B2F"
+                                                    To="#3E434A"
+                                                    Duration="0:0:0.3" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Border.MouseLeave"
+                                      SourceName="border">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="BorderBackground"
+                                                    Storyboard.TargetProperty="Color"
+                                                    From="#3E434A"
+                                                    To="#272B2F"
+                                                    Duration="0:0:0.3" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <Trigger Property="IsChecked"
+                                 Value="True">
+                            <Setter TargetName="border"
+                                    Property="Background"
+                                    Value="#212529" />
+                            <Setter TargetName="HighlightChecked"
+                                    Property="Visibility"
+                                    Value="Visible" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 
 </ResourceDictionary>

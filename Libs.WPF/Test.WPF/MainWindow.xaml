@@ -1,5 +1,7 @@
 ﻿<wd:DarkWindow x:Class="Test.WPF.MainWindow"
                xmlns:wd="clr-namespace:Libs.WPF.Controls.Windows;assembly=Libs.WPF"
+               xmlns:icons="clr-namespace:Libs.WPF.Controls.PackIcons;assembly=Libs.WPF"
+               xmlns:menu="clr-namespace:Libs.WPF.Controls.Menu;assembly=Libs.WPF"
                Style="{StaticResource DarkWindowStyle}"
                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -304,7 +306,7 @@
                             </DataGridTemplateColumn.CellTemplate>
                             <DataGridTemplateColumn.CellEditingTemplate>
                                 <DataTemplate>
-                                    <ComboBox ItemsSource="{Binding DataContext.Skills, RelativeSource={RelativeSource AncestorType=DataGrid}}"/>
+                                    <ComboBox ItemsSource="{Binding DataContext.Skills, RelativeSource={RelativeSource AncestorType=DataGrid}}" />
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellEditingTemplate>
                         </DataGridTemplateColumn>
@@ -355,6 +357,29 @@
 
                 </Expander>
             </StackPanel>
+
+            <!--Menu Tabs-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="350" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <StackPanel>
+                    <!--Features-->
+                    <menu:MenuRadioButton Kind="ViewDashboardOutline"
+                                          IsChecked="True"
+                                          ContentEN="Features"
+                                          ContentVI="Chức năng" />
+                    <!--Setting-->
+                    <menu:MenuRadioButton Kind="Tune"
+                                          ContentEN="Setting"
+                                          ContentVI="Thiết lập" />
+                    <!--Help-->
+                    <menu:MenuRadioButton Kind="HelpCircleOutline"
+                                          ContentEN="Help"
+                                          ContentVI="Trợ giúp" />
+                </StackPanel>
+            </Grid>
 
             <StackPanel Margin="0 16 0 0">
 

@@ -4,6 +4,7 @@
         <ResourceDictionary Source="../Base/BaseColors.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
+    <!--BaseLabelStyle-->
     <Style x:Key="BaseLabelStyle"
            TargetType="Label">
         <Setter Property="Foreground"
@@ -18,6 +19,7 @@
            BasedOn="{StaticResource BaseLabelStyle}">
     </Style>
 
+    <!--HighlightLabelStyle-->
     <Style x:Key="HighlightLabelStyle"
            TargetType="Label"
            BasedOn="{StaticResource BaseLabelStyle}">
@@ -25,11 +27,24 @@
                 Value="{StaticResource HighlightColor}" />
     </Style>
 
+    <!--BoldHighlightLabelStyle-->
     <Style x:Key="BoldHighlightLabelStyle"
            BasedOn="{StaticResource HighlightLabelStyle}"
            TargetType="Label">
         <Setter Property="FontWeight"
                 Value="Bold" />
+    </Style>
+
+    <!--SubLabelStyle-->
+    <Style x:Key="SubLabelStyle"
+           TargetType="Label"
+           BasedOn="{StaticResource BaseLabelStyle}">
+        <Setter Property="Foreground"
+                Value="{StaticResource SubTextColor}" />
+        <Setter Property="FontStyle"
+                Value="Italic" />
+        <Setter Property="Margin"
+                Value="4 0 4 0" />
     </Style>
 
 </ResourceDictionary>

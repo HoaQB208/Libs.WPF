@@ -3,6 +3,7 @@
         <ResourceDictionary Source="../Styles/TextBlock.xaml" />
         <ResourceDictionary Source="../Styles/Label.xaml" />
         <ResourceDictionary Source="../Styles/TextBox.xaml" />
+        <ResourceDictionary Source="../Styles/PackIcon.xaml" />
         <ResourceDictionary Source="../Styles/CheckBox.xaml" />
         <ResourceDictionary Source="../Styles/RadioButton.xaml" />
         <ResourceDictionary Source="../Styles/ScrollBar.xaml" />

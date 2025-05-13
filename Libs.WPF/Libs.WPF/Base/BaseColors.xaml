@@ -4,6 +4,7 @@
     <SolidColorBrush x:Key="ForegroundColor">White</SolidColorBrush>
     <SolidColorBrush x:Key="InverseForegroundColor">Black</SolidColorBrush>
     <SolidColorBrush x:Key="HighlightColor">#FCD535</SolidColorBrush>
+    <SolidColorBrush x:Key="SubTextColor">Gray</SolidColorBrush>
     <SolidColorBrush x:Key="MouseOverButtonColor">#FFA955</SolidColorBrush>
     <SolidColorBrush x:Key="PressedButtonColor">#EA7300</SolidColorBrush>
     <SolidColorBrush x:Key="BackgroundColor">#212529</SolidColorBrush>

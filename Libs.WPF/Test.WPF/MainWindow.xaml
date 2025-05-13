@@ -80,15 +80,19 @@
                     <ColumnDefinition />
                     <ColumnDefinition Width="8" />
                     <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition />
                     <RowDefinition />
                 </Grid.RowDefinitions>
+                <!--Default-->
                 <Label Content="Default Label" />
                 <Label Content="Disable Default Label"
                        IsEnabled="False"
                        Grid.Row="1" />
+                <!--Highlight-->
                 <Label Content="Highlight Label"
                        Style="{StaticResource HighlightLabelStyle}"
                        Grid.Column="2" />
@@ -97,6 +101,7 @@
                        IsEnabled="False"
                        Grid.Column="2"
                        Grid.Row="1" />
+                <!--Highlight Bold-->
                 <Label Content="Highlight Bold Label"
                        Style="{StaticResource BoldHighlightLabelStyle}"
                        Grid.Column="4" />
@@ -105,44 +110,77 @@
                        IsEnabled="False"
                        Grid.Column="4"
                        Grid.Row="1" />
+
+                <Label Content="Sub Label"
+                       Style="{StaticResource SubLabelStyle}"
+                       Grid.Column="6" />
+                <Label Content="Disable Sub Label"
+                       Style="{StaticResource SubLabelStyle}"
+                       IsEnabled="False"
+                       Grid.Column="6"
+                       Grid.Row="1" />
             </Grid>
 
-            <!--Button-->
-            <Grid Margin="0 16 0 0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition Width="8" />
-                    <ColumnDefinition />
-                    <ColumnDefinition Width="8" />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition Height="4" />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                <Button Content="Highlight Button"
-                        Style="{StaticResource HighlightButtonStyle}" />
-                <Button Content="Default Button"
-                        Grid.Column="2" />
-                <Button Content="Sub Button"
-                        Style="{StaticResource SubButtonStyle}"
-                        Grid.Column="4" />
+            <!--Expander-->
+            <StackPanel Margin="0 16 0 0">
+                <!--Button Style-->
+                <Expander Header="Button Style">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
 
-                <Button Content="Disable Highlight Button"
-                        Style="{StaticResource HighlightButtonStyle}"
-                        IsEnabled="False"
-                        Grid.Row="2" />
-                <Button Content="Disable Default Button"
-                        Grid.Column="2"
-                        IsEnabled="False"
-                        Grid.Row="2" />
-                <Button Content="Disable Sub Button"
-                        Style="{StaticResource SubButtonStyle}"
-                        Grid.Column="4"
-                        IsEnabled="False"
-                        Grid.Row="2" />
-            </Grid>
+                        <StackPanel>
+                            <Button Content="Sub Button"
+                                    Style="{StaticResource SubButtonStyle}" />
+                            <Button Content="Default Button" 
+                                    Margin="8"/>
+                            <Button Content="Highlight Button"
+                                    Style="{StaticResource HighlightButtonStyle}" />
+
+                        </StackPanel>
+
+                        <!--Disabled-->
+                        <StackPanel Grid.Column="1"
+                                    IsEnabled="False">
+                            <Button Content="Disable Sub Button"
+                                    Style="{StaticResource SubButtonStyle}" />
+                            <Button Content="Disable Default Button"
+                                    Margin="8"/>
+                            <Button Content="Disable Highlight Button"
+                                    Style="{StaticResource HighlightButtonStyle}" />
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="2">
+                            <Button Tag="Tune"
+                                    Style="{StaticResource IconButtonStyle}"/>
+                            <Button Tag="Tune"
+                                    Content="Icon Text Button"
+                                    Margin="8"
+                                    Style="{StaticResource IconTextButtonStyle}"/>
+                            <Button Tag="Send"
+                                    Content="Border Button"
+                                    Style="{StaticResource IconTextBorderButtonStyle}"/>
+                        </StackPanel>
+                        
+                        <StackPanel Grid.Column="3"
+                                    IsEnabled="False">
+                            <Button Tag="Tune"
+                                    Style="{StaticResource IconButtonStyle}" />
+                            <Button Tag="Tune"
+                                    Content="Icon Text Button"
+                                    Margin="8"
+                                    Style="{StaticResource IconTextButtonStyle}" />
+                            <Button Tag="Send"
+                                    Content="Border Button"
+                                    Style="{StaticResource IconTextBorderButtonStyle}" />
+                        </StackPanel>
+                    </Grid>
+                </Expander>
+            </StackPanel>
 
             <!--CheckBox-->
             <Grid Margin="0 16 0 0">
@@ -351,19 +389,13 @@
                 </DataGrid>
             </Grid>
 
-            <!--Expander-->
-            <StackPanel Margin="0 16 0 0">
-                <Expander Header="Expander">
-
-                </Expander>
-            </StackPanel>
-
             <!--Menu Tabs-->
-            <Grid>
+            <Grid Margin="0 16 0 0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="350" />
+                    <ColumnDefinition Width="250" />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
+                <!--Menu-->
                 <StackPanel>
                     <!--Features-->
                     <menu:MenuRadioButton Kind="ViewDashboardOutline"
@@ -379,6 +411,11 @@
                                           ContentEN="Help"
                                           ContentVI="Trợ giúp" />
                 </StackPanel>
+
+                <!--Pages-->
+                <Frame Grid.Column="1"
+                       Content="{Binding SelectedPage, UpdateSourceTrigger=PropertyChanged}"
+                       NavigationUIVisibility="Hidden" />
             </Grid>
 
             <StackPanel Margin="0 16 0 0">

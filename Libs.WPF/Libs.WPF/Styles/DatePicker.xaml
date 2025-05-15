@@ -3,7 +3,6 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../Converters/ConverterStyles.xaml" />
         <ResourceDictionary Source="../Base/BaseColors.xaml" />
-        <ResourceDictionary Source="Calendar.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <!--DatePickerTextBox-->
@@ -53,7 +52,6 @@
     </Style>
 
 
-
     <!--BaseDatePickerStyle-->
     <Style x:Key="BaseDatePickerStyle"
            TargetType="DatePicker">
@@ -67,8 +65,6 @@
                 Value="Center" />
         <Setter Property="BorderThickness"
                 Value="0" />
-        <Setter Property="CalendarStyle"
-                Value="{StaticResource BaseCalendarStyle}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="DatePicker">

@@ -62,7 +62,7 @@ namespace Libs.WPF.Controls.Menu
 
         // Size
         public static readonly DependencyProperty SizeProperty =
-            DependencyProperty.Register(nameof(Size), typeof(double), typeof(MenuRadioButton), new PropertyMetadata(42.0));
+            DependencyProperty.Register(nameof(Size), typeof(double), typeof(MenuRadioButton), new PropertyMetadata(36.0));
 
         public double Size
         {

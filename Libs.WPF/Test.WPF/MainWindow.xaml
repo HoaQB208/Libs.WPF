@@ -1,8 +1,9 @@
 ﻿<wd:DarkWindow x:Class="Test.WPF.MainWindow"
                xmlns:wd="clr-namespace:Libs.WPF.Controls.Windows;assembly=Libs.WPF"
+               Style="{StaticResource DarkWindowStyle}"
+               xmlns:scbb="clr-namespace:Libs.WPF.Controls.SearchableComboBox;assembly=Libs.WPF"
                xmlns:icons="clr-namespace:Libs.WPF.Controls.PackIcons;assembly=Libs.WPF"
                xmlns:menu="clr-namespace:Libs.WPF.Controls.Menu;assembly=Libs.WPF"
-               Style="{StaticResource DarkWindowStyle}"
                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -244,12 +245,18 @@
                 <StackPanel>
                     <ComboBox ItemsSource="{Binding StringList}"
                               SelectedItem="{Binding SelectedStringItem, UpdateSourceTrigger=PropertyChanged}" />
+                    <scbb:SearchableComboBox ItemsSource="{Binding StringList}"
+                                             SelectedItem="{Binding SelectedStringItem, UpdateSourceTrigger=PropertyChanged}"
+                                             Margin="0 4 0 0" />
                 </StackPanel>
                 <!--Disabled-->
                 <StackPanel Grid.Column="2"
                             IsEnabled="False">
                     <ComboBox ItemsSource="{Binding StringList}"
                               SelectedItem="{Binding SelectedStringItem, UpdateSourceTrigger=PropertyChanged}" />
+                    <scbb:SearchableComboBox ItemsSource="{Binding StringList}"
+                                             SelectedItem="{Binding SelectedStringItem, UpdateSourceTrigger=PropertyChanged}"
+                                             Margin="0 4 0 0" />
                 </StackPanel>
             </Grid>
 

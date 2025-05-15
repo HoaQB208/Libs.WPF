@@ -63,8 +63,7 @@
     </Style>
 
     <Style TargetType="Button"
-           BasedOn="{StaticResource BaseButton}">
-    </Style>
+           BasedOn="{StaticResource BaseButton}" />
 
     <!--SubButtonStyle-->
     <Style x:Key="SubButtonStyle"

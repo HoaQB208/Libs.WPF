@@ -10,11 +10,11 @@
                xmlns:local="clr-namespace:Test.WPF"
                mc:Ignorable="d"
                Title="Main Window"
-               Height="1680"
+               Height="3000"
                Width="1200">
 
     <ScrollViewer>
-        <StackPanel>
+        <StackPanel Margin="0 0 0 32">
             <!--TextBlock-->
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -29,7 +29,27 @@
                            Grid.Column="2" />
             </Grid>
 
-            
+            <!--DatePicker-->
+            <Grid Margin="0 32 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <StackPanel>
+                    <DatePicker />
+                    <DatePicker SelectedDate="2025/05/25"
+                                Margin="0 4 0 0" />
+                </StackPanel>
+                <!--Disabled-->
+                <StackPanel Grid.Column="2"
+                            IsEnabled="False">
+                    <DatePicker />
+                    <DatePicker SelectedDate="2025/05/25"
+                                Margin="0 4 0 0" />
+                </StackPanel>
+            </Grid>
+
             <!--TextBox-->
             <Grid Margin="0 32 0 0">
                 <Grid.ColumnDefinitions>
@@ -96,7 +116,7 @@
                 <StackPanel>
                     <Button Content="Sub Button"
                             Style="{StaticResource SubButtonStyle}" />
-                    <Button Content="Default Button"/>
+                    <Button Content="Default Button" />
                     <Button Content="Highlight Button"
                             Style="{StaticResource HighlightButtonStyle}" />
                     <Button Tag="Tune"
@@ -106,14 +126,14 @@
                             Style="{StaticResource IconTextButtonStyle}" />
                     <Button Tag="Send"
                             Content="Border Button"
-                            Style="{StaticResource IconTextBorderButtonStyle}"/>
+                            Style="{StaticResource IconTextBorderButtonStyle}" />
                 </StackPanel>
                 <!--Disabled-->
                 <StackPanel Grid.Column="2"
                             IsEnabled="False">
                     <Button Content="Sub Button"
                             Style="{StaticResource SubButtonStyle}" />
-                    <Button Content="Default Button"/>
+                    <Button Content="Default Button" />
                     <Button Content="Highlight Button"
                             Style="{StaticResource HighlightButtonStyle}" />
                     <Button Tag="Tune"
@@ -123,7 +143,7 @@
                             Style="{StaticResource IconTextButtonStyle}" />
                     <Button Tag="Send"
                             Content="Border Button"
-                            Style="{StaticResource IconTextBorderButtonStyle}"/>
+                            Style="{StaticResource IconTextBorderButtonStyle}" />
                 </StackPanel>
             </Grid>
 
@@ -430,6 +450,76 @@
             </Grid>
 
 
+
+            <!--Calender-->
+            <Grid Margin="0 32 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <StackPanel>
+
+                </StackPanel>
+                <!--Disabled-->
+                <StackPanel Grid.Column="2"
+                            IsEnabled="False">
+
+                </StackPanel>
+            </Grid>
+
+            <!--TreeView-->
+            <Grid Margin="0 32 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <StackPanel>
+
+                </StackPanel>
+                <!--Disabled-->
+                <StackPanel Grid.Column="2"
+                            IsEnabled="False">
+
+                </StackPanel>
+            </Grid>
+
+            <!--ProgressBar-->
+            <Grid Margin="0 32 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <StackPanel>
+
+                </StackPanel>
+                <!--Disabled-->
+                <StackPanel Grid.Column="2"
+                            IsEnabled="False">
+
+                </StackPanel>
+            </Grid>
+
+            <!--ItemControl-->
+            <Grid Margin="0 32 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="8" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <StackPanel>
+
+                </StackPanel>
+                <!--Disabled-->
+                <StackPanel Grid.Column="2"
+                            IsEnabled="False">
+
+                </StackPanel>
+            </Grid>
+
+            <!--Image-->
             <Grid Margin="0 32 0 0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />

@@ -2,4 +2,6 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:converters="clr-namespace:Libs.WPF.Converters">
     <converters:NullToCollapsed x:Key="NullToCollapsed" />
+    <converters:StringNullOrEmptyToVisible x:Key="StringNullOrEmptyToVisible" />
+    <converters:StringNullOrEmptyToCollapsed x:Key="StringNullOrEmptyToCollapsed" />
 </ResourceDictionary>

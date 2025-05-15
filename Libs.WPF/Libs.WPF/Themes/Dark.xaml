@@ -1,5 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
     <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Converters/ConverterStyles.xaml" />
+        <ResourceDictionary Source="../Controls/PackIcons/PackIconStyles.xaml" />
         <ResourceDictionary Source="../Styles/TextBlock.xaml" />
         <ResourceDictionary Source="../Styles/Label.xaml" />
         <ResourceDictionary Source="../Styles/TextBox.xaml" />
@@ -11,12 +13,12 @@
         <ResourceDictionary Source="../Styles/GroupBox.xaml" />
         <ResourceDictionary Source="../Styles/Expander.xaml" />
         <ResourceDictionary Source="../Styles/DataGrid.xaml" />
+        <ResourceDictionary Source="../Styles/TreeView.xaml" />
+        <ResourceDictionary Source="../Styles/DatePicker.xaml" />
         <ResourceDictionary Source="../Styles/ProgressBar.xaml" />
         <ResourceDictionary Source="../Styles/Expander.xaml" />
         <ResourceDictionary Source="../Styles/ScrollViewer.xaml" />
         <ResourceDictionary Source="../Styles/Page.xaml" />
         <ResourceDictionary Source="../Styles/Window.xaml" />
-        <ResourceDictionary Source="../Controls/PackIcons/PackIconStyles.xaml" />
-        <ResourceDictionary Source="../Converters/ConverterStyles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

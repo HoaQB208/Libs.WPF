@@ -1,0 +1,99 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Base/BaseColors.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <!--CalendarDayButton-->
+    <Style TargetType="CalendarDayButton"
+           x:Key="DarkModeDayButtonStyle">
+        <Setter Property="Foreground"
+                Value="White" />
+        <Setter Property="Background"
+                Value="Transparent" />
+        <Setter Property="BorderBrush"
+                Value="Transparent" />
+        <Setter Property="BorderThickness"
+                Value="1" />
+        <Setter Property="Padding"
+                Value="4" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CalendarDayButton">
+                    <Border x:Name="dayButtonBorder"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="4"
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter TargetName="dayButtonBorder"
+                                    Property="Background"
+                                    Value="#333" />
+                        </Trigger>
+                        <Trigger Property="IsSelected"
+                                 Value="True">
+                            <Setter TargetName="dayButtonBorder"
+                                    Property="Background"
+                                    Value="#007ACC" />
+                        </Trigger>
+                        <Trigger Property="IsToday"
+                                 Value="True">
+                            <Setter TargetName="dayButtonBorder"
+                                    Property="BorderBrush"
+                                    Value="#FFA500" />
+                            <Setter TargetName="dayButtonBorder"
+                                    Property="BorderThickness"
+                                    Value="2" />
+                        </Trigger>
+                        <Trigger Property="IsInactive"
+                                 Value="True">
+                            <Setter Property="Foreground"
+                                    Value="Gray" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!--BaseCalendarStyle-->
+    <Style TargetType="Calendar"
+           x:Key="BaseCalendarStyle">
+        <Setter Property="Foreground"
+                Value="White" />
+        <Setter Property="Background"
+                Value="#1E1E1E" />
+        <Setter Property="BorderBrush"
+                Value="Gray" />
+        <Setter Property="BorderThickness"
+                Value="1" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Calendar">
+                    <Grid>
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                            <CalendarItem x:Name="PART_CalendarItem" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Resources>
+            <Style TargetType="CalendarDayButton"
+                   BasedOn="{StaticResource DarkModeDayButtonStyle}" />
+        </Style.Resources>
+    </Style>
+
+    <Style  TargetType="Calendar"
+            BasedOn="{StaticResource BaseCalendarStyle}" />
+
+</ResourceDictionary>

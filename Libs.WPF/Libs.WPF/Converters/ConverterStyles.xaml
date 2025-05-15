@@ -4,4 +4,8 @@
     <converters:NullToCollapsed x:Key="NullToCollapsed" />
     <converters:StringNullOrEmptyToVisible x:Key="StringNullOrEmptyToVisible" />
     <converters:StringNullOrEmptyToCollapsed x:Key="StringNullOrEmptyToCollapsed" />
+    <converters:ProgressBarToPosition x:Key="ProgressBarToPosition" />
+    <converters:ProgressBarToStringValue x:Key="ProgressBarToStringValue" />
+    <converters:ProgressBarToVisibility x:Key="ProgressBarToVisibility" />
+    <converters:ProgressWidthConverter x:Key="ProgressWidthConverter" />
 </ResourceDictionary>

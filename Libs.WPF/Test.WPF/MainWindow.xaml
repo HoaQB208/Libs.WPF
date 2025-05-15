@@ -500,12 +500,20 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <StackPanel>
-
+                    <ProgressBar Value="33"/>
+                    
+                    <ProgressBar Value="33"
+                                 Style="{StaticResource BitcoinProgressBar}"
+                                 Margin="0 8 0 0" />
                 </StackPanel>
                 <!--Disabled-->
                 <StackPanel Grid.Column="2"
                             IsEnabled="False">
+                    <ProgressBar Value="33" />
 
+                    <ProgressBar Value="33"
+                                 Style="{StaticResource BitcoinProgressBar}"
+                                 Margin="0 8 0 0" />
                 </StackPanel>
             </Grid>
 

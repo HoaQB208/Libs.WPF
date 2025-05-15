@@ -17,4 +17,6 @@
     <SolidColorBrush x:Key="DisableColor">#9A9C9E</SolidColorBrush>
     <SolidColorBrush x:Key="DisableBackgroundColor">LightGray</SolidColorBrush>
 
+    <SolidColorBrush x:Key="LowOpacityWhite" Color="White" Opacity="0.2" />
+
 </ResourceDictionary>

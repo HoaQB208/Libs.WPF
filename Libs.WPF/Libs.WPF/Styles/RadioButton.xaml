@@ -96,6 +96,12 @@
                                     Property="Visibility"
                                     Value="Visible" />
                         </Trigger>
+                        <Trigger Property="IsEnabled"
+                                 Value="False">
+                            <Setter TargetName="HighlightChecked"
+                                    Property="Background"
+                                    Value="{StaticResource DisableBackgroundColor}" />
+                        </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>

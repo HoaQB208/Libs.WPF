@@ -16,13 +16,13 @@
         <Setter Property="VerticalContentAlignment"
                 Value="Center" />
         <Setter Property="HorizontalAlignment"
-                Value="Center" />
+                Value="Left" />
         <Setter Property="HorizontalContentAlignment"
-                Value="Center" />
+                Value="Left" />
         <Setter Property="Cursor"
                 Value="Hand" />
         <Setter Property="Margin"
-                Value="5 0 5 0" />
+                Value="5 2 5 2" />
         <Setter Property="Padding"
                 Value="8 4 8 4" />
         <Setter Property="BorderThickness"
@@ -102,7 +102,8 @@
                         <icons:PackIcon x:Name="icon"
                                         Width="{TemplateBinding Width}"
                                         Height="{TemplateBinding Height}"
-                                        Margin="0 1 0 0"
+                                        Margin="-3 1 0 0"
+                                        Padding="0"
                                         Foreground="{StaticResource HighlightColor}"
                                         SnapsToDevicePixels="False"
                                         Kind="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Tag}" />
@@ -146,7 +147,7 @@
                             <icons:PackIcon x:Name="icon"
                                             Width="{TemplateBinding Height}"
                                             Height="{TemplateBinding Height}"
-                                            Margin="0 1 0 0"
+                                            Margin="-3 1 0 0"
                                             Foreground="{StaticResource HighlightColor}"
                                             SnapsToDevicePixels="False"
                                             Kind="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Tag}" />

@@ -2,7 +2,12 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:icons="clr-namespace:Libs.WPF.Controls.PackIcons">
 
-    <Style x:Key="ButtonPackIconStyle" TargetType="icons:PackIcon">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Base/BaseColors.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    
+    <Style x:Key="ButtonPackIconStyle"
+           TargetType="icons:PackIcon">
         <Setter Property="VerticalAlignment"
                 Value="Center" />
         <Setter Property="VerticalContentAlignment"
@@ -15,13 +20,22 @@
                             Height="{TemplateBinding Height}"
                             BorderThickness="0"
                             Cursor="Hand">
-                        <icons:PackIcon Width="{TemplateBinding Width}"
-                                        Height="{TemplateBinding Height}"
-                                        Kind="{TemplateBinding Kind}" />
+                        <icons:PackIcon  x:Name="icon"
+                                         Width="{TemplateBinding Width}"
+                                         Height="{TemplateBinding Height}"
+                                         Kind="{TemplateBinding Kind}" />
                     </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled"
+                                 Value="False">
+                            <Setter TargetName="icon"
+                                    Property="Foreground"
+                                    Value="{StaticResource DisableBackgroundColor}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-    
+
 </ResourceDictionary>

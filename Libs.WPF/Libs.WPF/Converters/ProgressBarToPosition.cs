@@ -15,7 +15,7 @@ namespace Libs.WPF.Converters
                 {
                     double progressValue = progressBar.Value;
                     double progressBarWidth = progressBar.ActualWidth;
-                    double iconWidth = 55; // Đặt chiều rộng của PART_Icon tại đây
+                    double iconWidth = 28; // Đặt chiều rộng của PART_Icon tại đây
                     double margin = (progressValue / 100) * (progressBarWidth - iconWidth); // Tính toán vị trí ngang của PART_Icon dựa trên giá trị của ProgressBar
                     return new Thickness(margin, 0, 0, 0); // Trả về một đối tượng Thickness để đặt vị trí ngang cho PART_Icon
                 }

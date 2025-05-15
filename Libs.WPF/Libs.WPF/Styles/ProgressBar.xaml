@@ -79,14 +79,11 @@
                             <RowDefinition />
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition />
-                            <ColumnDefinition Width="55" />
-                        </Grid.ColumnDefinitions>
 
                         <icons:PackIcon x:Name="PART_Icon"
                                         Width="28"
                                         Height="28"
+                                        Padding="0"
                                         HorizontalAlignment="Left"
                                         VerticalAlignment="Center"
                                         Foreground="{StaticResource HighlightColor}"
@@ -108,11 +105,21 @@
                             </icons:PackIcon.Visibility>
                         </icons:PackIcon>
 
+                        <icons:PackIcon Width="28"
+                                        Height="28"
+                                        Padding="0"
+                                        Margin="0 0 -2.3 0"
+                                        HorizontalAlignment="Right"
+                                        HorizontalContentAlignment="Right"
+                                        VerticalAlignment="Center"
+                                        Foreground="{StaticResource HighlightColor}"
+                                        Kind="WalletOutline" />
+
                         <!-- Thanh nền -->
-                        <Border   Grid.Row="2"
-                                  Height="6"
-                                  Background="{StaticResource LowOpacityWhite}"
-                                  CornerRadius="3">
+                        <Border Grid.Row="1"
+                                Height="6"
+                                Background="{StaticResource LowOpacityWhite}"
+                                CornerRadius="3">
                             <!-- Thanh tiến trình -->
                             <Rectangle Height="6"
                                        Fill="{StaticResource HighlightColor}"
@@ -121,8 +128,8 @@
                                        HorizontalAlignment="Left">
                                 <Rectangle.Width>
                                     <MultiBinding Converter="{StaticResource ProgressWidthConverter}">
-                                        <Binding Path="ActualWidth"
-                                                 RelativeSource="{RelativeSource AncestorType=Border}" />
+                                        <Binding RelativeSource="{RelativeSource TemplatedParent}"
+                                                 Path="ActualWidth" />
                                         <Binding RelativeSource="{RelativeSource TemplatedParent}"
                                                  Path="Value" />
                                         <Binding RelativeSource="{RelativeSource TemplatedParent}"
@@ -132,32 +139,18 @@
                             </Rectangle>
                         </Border>
 
-
-                        <StackPanel Grid.RowSpan="3"
-                                    Grid.Column="1">
-                            <icons:PackIcon Width="28"
-                                            Height="28"
-                                            HorizontalAlignment="Left"
-                                            VerticalAlignment="Center"
-                                            Foreground="{StaticResource HighlightColor}"
-                                            Kind="WalletOutline" />
-                            <Label Margin="4,0,0,0"
-                                   Padding="0"
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Bottom"
-                                   HorizontalContentAlignment="Left"
-                                   VerticalContentAlignment="Bottom"
-                                   FontWeight="Bold"
-                                   Foreground="{StaticResource HighlightColor}">
-                                <Label.Content>
-                                    <MultiBinding Converter="{StaticResource ProgressBarToStringValue}">
-                                        <Binding Path="Value"
-                                                 RelativeSource="{RelativeSource TemplatedParent}" />
-                                        <Binding RelativeSource="{RelativeSource AncestorType={x:Type ProgressBar}}" />
-                                    </MultiBinding>
-                                </Label.Content>
-                            </Label>
-                        </StackPanel>
+                        <!-- Label hiển thị phần trăm -->
+                        <Label  Grid.Row="2"
+                                Foreground="{StaticResource HighlightColor}"
+                                HorizontalAlignment="Center">
+                            <Label.Content>
+                                <MultiBinding Converter="{StaticResource ProgressBarToStringValue}">
+                                    <Binding Path="Value"
+                                             RelativeSource="{RelativeSource TemplatedParent}" />
+                                    <Binding RelativeSource="{RelativeSource TemplatedParent}" />
+                                </MultiBinding>
+                            </Label.Content>
+                        </Label>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>

@@ -502,7 +502,7 @@
                 <StackPanel>
                     <ProgressBar Value="33"/>
                     
-                    <ProgressBar Value="33"
+                    <ProgressBar Value="100"
                                  Style="{StaticResource BitcoinProgressBar}"
                                  Margin="0 8 0 0" />
                 </StackPanel>

@@ -239,6 +239,13 @@
                 Value="{StaticResource ForegroundColor}" />
         <Setter Property="Height"
                 Value="28" />
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
         <Setter Property="Template"
                 Value="{StaticResource ComboBoxTemplate}" />
         <Setter Property="ItemContainerStyle">
@@ -291,13 +298,6 @@
                         </Setter.Value>
                     </Setter>
                 </Style>
-            </Setter.Value>
-        </Setter>
-        <Setter Property="ItemsPanel">
-            <Setter.Value>
-                <ItemsPanelTemplate>
-                    <VirtualizingStackPanel />
-                </ItemsPanelTemplate>
             </Setter.Value>
         </Setter>
     </Style>

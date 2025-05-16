@@ -19,13 +19,13 @@ namespace Libs.WPF.Controls.SearchableComboBox
         TextBox editableTextBoxCache;
 
         Predicate<object> defaultItemsFilter;
-        //
+
         public static readonly DependencyProperty HintProperty = DependencyProperty.Register(
-    "Hint",
-    typeof(string),
-    typeof(SearchableComboBox),
-    new PropertyMetadata(string.Empty)
-);
+            "Hint",
+            typeof(string),
+            typeof(SearchableComboBox),
+            new PropertyMetadata(string.Empty)
+        );
 
         public string Hint
         {
@@ -38,7 +38,7 @@ namespace Libs.WPF.Controls.SearchableComboBox
                 SetValue(HintProperty, value);
             }
         }
-        //
+
         public TextBox EditableTextBox
         {
             get

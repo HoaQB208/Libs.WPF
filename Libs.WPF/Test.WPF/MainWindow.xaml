@@ -243,8 +243,16 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <StackPanel>
+                    <!--Pick, not selected-->
+                    <ComboBox ItemsSource="{Binding StringList}"/>
+                    <!--Pick, selected-->
                     <ComboBox ItemsSource="{Binding StringList}"
-                              SelectedItem="{Binding SelectedStringItem, UpdateSourceTrigger=PropertyChanged}" />
+                              SelectedItem="{Binding SelectedStringItem, UpdateSourceTrigger=PropertyChanged}"
+                              Margin="0 4 0 0"/>
+                    <!--Searchable, not selected-->
+                    <scbb:SearchableComboBox ItemsSource="{Binding StringList}"
+                                             Margin="0 8 0 0" />
+                    <!--Searchable, selected-->
                     <scbb:SearchableComboBox ItemsSource="{Binding StringList}"
                                              SelectedItem="{Binding SelectedStringItem, UpdateSourceTrigger=PropertyChanged}"
                                              Margin="0 4 0 0" />
@@ -252,8 +260,16 @@
                 <!--Disabled-->
                 <StackPanel Grid.Column="2"
                             IsEnabled="False">
+                    <!--Pick, not selected-->
+                    <ComboBox ItemsSource="{Binding StringList}" />
+                    <!--Pick, selected-->
                     <ComboBox ItemsSource="{Binding StringList}"
-                              SelectedItem="{Binding SelectedStringItem, UpdateSourceTrigger=PropertyChanged}" />
+                              SelectedItem="{Binding SelectedStringItem, UpdateSourceTrigger=PropertyChanged}"
+                              Margin="0 4 0 0" />
+                    <!--Searchable, not selected-->
+                    <scbb:SearchableComboBox ItemsSource="{Binding StringList}"
+                                             Margin="0 8 0 0" />
+                    <!--Searchable, selected-->
                     <scbb:SearchableComboBox ItemsSource="{Binding StringList}"
                                              SelectedItem="{Binding SelectedStringItem, UpdateSourceTrigger=PropertyChanged}"
                                              Margin="0 4 0 0" />

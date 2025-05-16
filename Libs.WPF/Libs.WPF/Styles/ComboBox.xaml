@@ -325,44 +325,41 @@
                    Placement="Bottom"
                    PlacementTarget="{Binding ElementName=templateRoot}"
                    PopupAnimation="Slide">
-                <Grid x:Name="PART_Container"
-                      MinWidth="{Binding ActualWidth, ElementName=templateRoot}"
-                      MaxHeight="{TemplateBinding MaxDropDownHeight}">
-                    <Border x:Name="dropDownBorder"
-                            Padding="0,8"
-                            Background="#111315"
-                            BorderBrush="#111315"
-                            BorderThickness="0.5"
-                            CornerRadius="0">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition />
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
-                            <ScrollViewer x:Name="DropDownScrollViewer"
-                                          Grid.Row="1">
-                                <Grid x:Name="grid"
-                                      RenderOptions.ClearTypeHint="Enabled">
-                                    <Canvas x:Name="canvas"
-                                            Width="0"
-                                            Height="0"
-                                            HorizontalAlignment="Left"
-                                            VerticalAlignment="Top">
-                                        <Rectangle x:Name="opaqueRect"
-                                                   Width="{Binding ActualWidth, ElementName=dropDownBorder}"
-                                                   Height="{Binding ActualHeight, ElementName=dropDownBorder}"
-                                                   Fill="{Binding Background, ElementName=dropDownBorder}" />
-                                    </Canvas>
-                                    <ItemsPresenter x:Name="ItemsPresenter"
-                                                    KeyboardNavigation.DirectionalNavigation="Contained"
-                                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
-                                </Grid>
-                            </ScrollViewer>
+
+                <Border x:Name="dropDownBorder"
+                        Padding="0"
+                        Background="#111315"
+                        BorderBrush="#111315"
+                        BorderThickness="0.5"
+                        CornerRadius="0"
+                        MinWidth="{Binding ActualWidth, ElementName=templateRoot}"
+                        MaxHeight="{TemplateBinding MaxDropDownHeight}">
+
+                    <ScrollViewer x:Name="DropDownScrollViewer">
+                        <Grid x:Name="grid"
+                              RenderOptions.ClearTypeHint="Enabled">
+
+                            <!-- Giữ lại opaqueRect để sử dụng ở nơi khác -->
+                            <Canvas x:Name="canvas"
+                                    Width="0"
+                                    Height="0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Top"
+                                    IsHitTestVisible="False">
+                                <Rectangle x:Name="opaqueRect"
+                                           Width="{Binding ActualWidth, ElementName=dropDownBorder}"
+                                           Height="{Binding ActualHeight, ElementName=dropDownBorder}"
+                                           Fill="{Binding Background, ElementName=dropDownBorder}" />
+                            </Canvas>
+
+                            <ItemsPresenter x:Name="ItemsPresenter"
+                                            KeyboardNavigation.DirectionalNavigation="Contained"
+                                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
                         </Grid>
-                    </Border>
-                </Grid>
+                    </ScrollViewer>
+                </Border>
             </Popup>
+
             <!--toggleButton-->
             <ToggleButton x:Name="toggleButton"
                           Grid.ColumnSpan="2"

@@ -75,7 +75,7 @@
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="0"
-                                CornerRadius="8"
+                                CornerRadius="0"
                                 SnapsToDevicePixels="True">
                             <Grid>
                                 <Grid.ColumnDefinitions>
@@ -125,13 +125,13 @@
                                  Value="True">
                             <Setter TargetName="SubBorderTb"
                                     Property="Background"
-                                    Value="Gray" />
+                                    Value="Transparent" />
                             <Setter TargetName="PART_CircleClear"
                                     Property="Visibility"
                                     Value="Collapsed" />
                             <Setter TargetName="PART_CircleClear"
                                     Property="Background"
-                                    Value="Gray" />
+                                    Value="Transparent" />
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
@@ -142,7 +142,7 @@
                             </MultiTrigger.Conditions>
                             <Setter TargetName="SubBorderTb"
                                     Property="Background"
-                                    Value="Gray" />
+                                    Value="Transparent" />
                             <Setter TargetName="PART_CircleClear"
                                     Property="Visibility"
                                     Value="Visible" />

@@ -62,26 +62,9 @@
 
 
     <Style x:Key="TextBoxStyleComboxBoxEditable"
-           TargetType="{x:Type TextBox}">
+           TargetType="{x:Type TextBox}"
+           BasedOn="{StaticResource BaseTextBoxStyle}">
         <Setter Property="helpers:TextBoxHelper.IsMonitoring"
-                Value="True" />
-        <Setter Property="Background"
-                Value="#FCFCFC" />
-        <Setter Property="MinHeight"
-                Value="20" />
-        <Setter Property="BorderThickness"
-                Value="2,0,2,2" />
-        <Setter Property="BorderBrush"
-                Value="Transparent" />
-        <Setter Property="Padding"
-                Value="4 0 0 0" />
-        <Setter Property="VerticalAlignment"
-                Value="Center" />
-        <Setter Property="VerticalContentAlignment"
-                Value="Center" />
-        <Setter Property="Foreground"
-                Value="#33383F" />
-        <Setter Property="SnapsToDevicePixels"
                 Value="True" />
         <Setter Property="Template">
             <Setter.Value>
@@ -138,29 +121,18 @@
                     </Grid>
 
                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsEnabled"
-                                 Value="false">
-                            <Setter TargetName="SubBorderTb"
-                                    Property="Background"
-                                    Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" />
-                            <Setter Property="Foreground"
-                                    Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
-                        </Trigger>
-
                         <Trigger Property="IsFocused"
                                  Value="True">
                             <Setter TargetName="SubBorderTb"
                                     Property="Background"
-                                    Value="#FFFFFF" />
+                                    Value="Gray" />
                             <Setter TargetName="PART_CircleClear"
                                     Property="Visibility"
                                     Value="Collapsed" />
                             <Setter TargetName="PART_CircleClear"
                                     Property="Background"
-                                    Value="#FFFFFF" />
-
+                                    Value="Gray" />
                         </Trigger>
-
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="IsFocused"
@@ -170,13 +142,13 @@
                             </MultiTrigger.Conditions>
                             <Setter TargetName="SubBorderTb"
                                     Property="Background"
-                                    Value="#FFFFFF" />
+                                    Value="Gray" />
                             <Setter TargetName="PART_CircleClear"
                                     Property="Visibility"
                                     Value="Visible" />
                             <Setter TargetName="PART_CircleClear"
                                     Property="Background"
-                                    Value="#FFFFFF" />
+                                    Value="Gray" />
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>

@@ -272,7 +272,7 @@ namespace Libs.WPF.Controls.SearchableComboBox
         {
             InitializeComponent();
 
-            Style = (Style)TryFindResource("AutoComboBoxStyle");
+            Style = (Style)TryFindResource("SearchableComboBoxStyle");
             AddHandler(TextBoxBase.TextChangedEvent, new TextChangedEventHandler(OnTextChanged));
         }
     }

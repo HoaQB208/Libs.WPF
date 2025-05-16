@@ -11,6 +11,16 @@ namespace Libs.WPF.Controls.Windows
     {
         public DarkWindow(Window owner = null!)
         {
+            try
+            {
+                ResourceDictionary dict = new() { Source = new Uri("/Libs.WPF;component/Themes/Dark.xaml", UriKind.RelativeOrAbsolute) };
+                this.Resources.MergedDictionaries.Add(dict);
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show("Failed to load theme: " + ex.Message);
+            }
+
             Style = (Style)TryFindResource("DarkWindowStyle");
 
             if (owner is null) WindowStartupLocation = WindowStartupLocation.CenterScreen;

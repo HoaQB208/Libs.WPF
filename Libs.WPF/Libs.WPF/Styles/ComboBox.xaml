@@ -367,8 +367,8 @@
                           BorderBrush="{TemplateBinding BorderBrush}"
                           BorderThickness="{TemplateBinding BorderThickness}"
                           IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"
-                          Style="{DynamicResource ComboBoxToggleButton}" />
-            <Grid Margin="2,0">
+                          Style="{StaticResource ComboBoxToggleButton}" />
+            <Grid Margin="4 0 0 0">
                 <!--PART_EditableTextBox-->
                 <TextBox x:Name="PART_EditableTextBox"
                          HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
@@ -377,9 +377,9 @@
                          Style="{StaticResource TextBoxStyleComboxBoxEditable}" />
                 <!--HintTextBlock-->
                 <TextBlock x:Name="HintTextBlock"
-                           Margin="12,0"
                            VerticalAlignment="Center"
                            Foreground="#6F767E"
+                           Margin="3 0 4 0"
                            Text="{Binding Hint, RelativeSource={RelativeSource TemplatedParent}}"
                            IsHitTestVisible="False"
                            Visibility="Collapsed" />

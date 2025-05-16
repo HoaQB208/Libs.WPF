@@ -251,7 +251,7 @@
                               Margin="0 4 0 0"/>
                     <!--Searchable, not selected-->
                     <scbb:SearchableComboBox ItemsSource="{Binding StringList}"
-                                             Hint="Search or Select"
+                                             Hint="Select or Search"
                                              Margin="0 8 0 0" />
                     <!--Searchable, selected-->
                     <scbb:SearchableComboBox ItemsSource="{Binding StringList}"

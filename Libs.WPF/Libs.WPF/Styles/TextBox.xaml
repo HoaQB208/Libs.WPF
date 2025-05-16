@@ -6,6 +6,7 @@
         <ResourceDictionary Source="../Base/BaseColors.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
+    <!--BaseTextBoxStyle-->
     <Style x:Key="BaseTextBoxStyle"
            TargetType="TextBox">
         <Setter Property="AcceptsReturn"
@@ -34,6 +35,7 @@
            BasedOn="{StaticResource BaseTextBoxStyle}">
     </Style>
 
+    <!--ReadOnlyTextBoxStyle-->
     <Style x:Key="ReadOnlyTextBoxStyle"
            TargetType="TextBox"
            BasedOn="{StaticResource BaseTextBoxStyle}">
@@ -47,6 +49,7 @@
                 Value="True" />
     </Style>
 
+    <!--MultiLineTextBoxStyle-->
     <Style x:Key="MultiLineTextBoxStyle"
            TargetType="TextBox"
            BasedOn="{StaticResource BaseTextBoxStyle}">
@@ -60,7 +63,7 @@
                 Value="Auto" />
     </Style>
 
-
+    <!--TextBoxStyleComboxBoxEditable-->
     <Style x:Key="TextBoxStyleComboxBoxEditable"
            TargetType="{x:Type TextBox}"
            BasedOn="{StaticResource BaseTextBoxStyle}">
@@ -70,80 +73,34 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
                     <Grid>
-                        <Border Name="SubBorderTb"
-                                Grid.Row="1"
-                                Background="{TemplateBinding Background}"
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="0"
-                                CornerRadius="0"
-                                SnapsToDevicePixels="True">
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition />
-                                    <ColumnDefinition Width="auto" />
-                                </Grid.ColumnDefinitions>
-                                <TextBlock x:Name="PART_WaterMark"
-                                           Margin="8,0,0,0"
-                                           Padding="4"
-                                           HorizontalAlignment="Left"
-                                           VerticalAlignment="{TemplateBinding VerticalAlignment}"
-                                           Foreground="#9A9FA5"
-                                           IsHitTestVisible="True"
-                                           Text="{TemplateBinding helpers:TextBoxHelper.WatermarkText}" />
-                                <ScrollViewer x:Name="PART_ContentHost"
-                                              Margin="1"
-                                              Padding="4 0 0 0"
-                                              VerticalAlignment="{TemplateBinding VerticalAlignment}"
-                                              VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
-                                <Button x:Name="PART_ButtonClear"
-                                        Grid.Column="1"
-                                        Margin="0 0 4 0"
-                                        HorizontalAlignment="Center"
-                                        VerticalAlignment="Center"
-                                        helpers:TextBoxHelper.IsClearTextButtonBehaviorEnabled="True"
-                                        Style="{StaticResource ClearTextButtonStyle}" />
-                            </Grid>
-                        </Border>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock x:Name="PART_WaterMark"
+                                   Text="{TemplateBinding helpers:TextBoxHelper.WatermarkText}"
+                                   IsHitTestVisible="True" />
+                        <ScrollViewer x:Name="PART_ContentHost"
+                                      VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                      VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        <Button x:Name="PART_ButtonClear"
+                                Grid.Column="1"
+                                Style="{StaticResource CloseStyle}"
+                                Visibility="Hidden"
+                                Margin="0 2 0 0"
+                                helpers:TextBoxHelper.IsClearTextButtonBehaviorEnabled="True" />
                     </Grid>
-
+                    <!--Triggers-->
                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsFocused"
+                        <Trigger Property="helpers:TextBoxHelper.HasText"
                                  Value="True">
-                            <Setter TargetName="SubBorderTb"
-                                    Property="Background"
-                                    Value="Transparent" />
-                        </Trigger>
-                        <MultiTrigger>
-                            <MultiTrigger.Conditions>
-                                <Condition Property="IsFocused"
-                                           Value="False" />
-                                <Condition Property="helpers:TextBoxHelper.HasText"
-                                           Value="True" />
-                            </MultiTrigger.Conditions>
-                            <Setter TargetName="SubBorderTb"
-                                    Property="Background"
-                                    Value="Transparent" />
-                        </MultiTrigger>
-                        <MultiTrigger>
-                            <MultiTrigger.Conditions>
-                                <Condition Property="IsFocused"
-                                           Value="true" />
-                                <Condition Property="helpers:TextBoxHelper.HasText"
-                                           Value="False" />
-                            </MultiTrigger.Conditions>
-                            <Setter TargetName="PART_WaterMark"
-                                    Property="Opacity"
-                                    Value="0.5" />
-                        </MultiTrigger>
-                        <MultiTrigger>
-                            <MultiTrigger.Conditions>
-                                <Condition Property="helpers:TextBoxHelper.HasText"
-                                           Value="True" />
-                            </MultiTrigger.Conditions>
                             <Setter TargetName="PART_WaterMark"
                                     Property="Visibility"
                                     Value="Collapsed" />
-                        </MultiTrigger>
+                            <Setter TargetName="PART_ButtonClear"
+                                    Property="Visibility"
+                                    Value="Visible" />
+                        </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>

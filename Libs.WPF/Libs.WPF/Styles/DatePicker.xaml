@@ -136,7 +136,7 @@
                                                HorizontalContentAlignment="Stretch"
                                                VerticalContentAlignment="Center"
                                                Focusable="{TemplateBinding Focusable}"
-                                               FontWeight="DemiBold"
+                                               FontWeight="Normal"
                                                Style="{StaticResource DatePickerTextBoxStyle}" />
                             <Button x:Name="PART_Button"
                                     Grid.Column="1"

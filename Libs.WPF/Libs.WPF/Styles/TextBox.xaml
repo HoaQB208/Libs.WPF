@@ -79,12 +79,10 @@
                                 SnapsToDevicePixels="True">
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="auto" />
                                     <ColumnDefinition />
                                     <ColumnDefinition Width="auto" />
                                 </Grid.ColumnDefinitions>
                                 <TextBlock x:Name="PART_WaterMark"
-                                           Grid.Column="1"
                                            Margin="8,0,0,0"
                                            Padding="4"
                                            HorizontalAlignment="Left"
@@ -93,29 +91,17 @@
                                            IsHitTestVisible="True"
                                            Text="{TemplateBinding helpers:TextBoxHelper.WatermarkText}" />
                                 <ScrollViewer x:Name="PART_ContentHost"
-                                              Grid.Column="1"
                                               Margin="1"
                                               Padding="4 0 0 0"
                                               VerticalAlignment="{TemplateBinding VerticalAlignment}"
                                               VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
                                 <Button x:Name="PART_ButtonClear"
-                                        Grid.Column="2"
+                                        Grid.Column="1"
                                         Margin="0 0 4 0"
                                         HorizontalAlignment="Center"
                                         VerticalAlignment="Center"
                                         helpers:TextBoxHelper.IsClearTextButtonBehaviorEnabled="True"
                                         Style="{StaticResource ClearTextButtonStyle}" />
-                                <Border x:Name="PART_CircleClear"
-                                        Grid.Column="2"
-                                        Width="22"
-                                        Height="22"
-                                        Margin="0 0 4 0"
-                                        HorizontalAlignment="Center"
-                                        VerticalAlignment="Center"
-                                        Background="{TemplateBinding Background}"
-                                        CornerRadius="21"
-                                        Visibility="Visible" />
-
                             </Grid>
                         </Border>
                     </Grid>
@@ -124,12 +110,6 @@
                         <Trigger Property="IsFocused"
                                  Value="True">
                             <Setter TargetName="SubBorderTb"
-                                    Property="Background"
-                                    Value="Transparent" />
-                            <Setter TargetName="PART_CircleClear"
-                                    Property="Visibility"
-                                    Value="Collapsed" />
-                            <Setter TargetName="PART_CircleClear"
                                     Property="Background"
                                     Value="Transparent" />
                         </Trigger>
@@ -143,12 +123,6 @@
                             <Setter TargetName="SubBorderTb"
                                     Property="Background"
                                     Value="Transparent" />
-                            <Setter TargetName="PART_CircleClear"
-                                    Property="Visibility"
-                                    Value="Visible" />
-                            <Setter TargetName="PART_CircleClear"
-                                    Property="Background"
-                                    Value="Gray" />
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
@@ -160,9 +134,6 @@
                             <Setter TargetName="PART_WaterMark"
                                     Property="Opacity"
                                     Value="0.5" />
-                            <Setter TargetName="PART_CircleClear"
-                                    Property="Visibility"
-                                    Value="Visible" />
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>

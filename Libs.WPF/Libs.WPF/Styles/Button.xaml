@@ -98,10 +98,11 @@
                     <Border Width="{TemplateBinding Width}"
                             Height="{TemplateBinding Height}"
                             Background="Transparent">
+                        <!---Margin: 3 1 0 0-->
                         <icons:PackIcon x:Name="icon"
                                         Width="{TemplateBinding Width}"
                                         Height="{TemplateBinding Height}"
-                                        Margin="-3 1 0 0"
+                                        Margin="0" 
                                         Padding="0"
                                         Foreground="{StaticResource HighlightColor}"
                                         SnapsToDevicePixels="False"

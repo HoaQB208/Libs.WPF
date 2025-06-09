@@ -1,5 +1,6 @@
 ﻿using System.Windows.Media;
 using System.Windows;
+using System.Collections.Generic;
 
 namespace Libs.WPF.Controls.Media
 {
@@ -7,7 +8,7 @@ namespace Libs.WPF.Controls.Media
     {
         public static FrameworkElement FindChild(DependencyObject obj, string childName)
         {
-            if (obj == null) return null!;
+            if (obj == null) return null;
 
             Queue<DependencyObject> queue = new Queue<DependencyObject>();
             queue.Enqueue(obj);
@@ -28,7 +29,7 @@ namespace Libs.WPF.Controls.Media
                 }
             }
 
-            return null!;
+            return null;
         }
     }
 }

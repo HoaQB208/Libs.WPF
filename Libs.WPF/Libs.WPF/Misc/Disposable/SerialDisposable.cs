@@ -1,4 +1,6 @@
-﻿namespace Libs.WPF.Misc.Disposable
+﻿using System;
+
+namespace Libs.WPF.Misc.Disposable
 {
     sealed class SerialDisposable : IDisposable
     {
@@ -9,18 +11,14 @@
             get { return content; }
             set
             {
-                if (content != null)
-                {
-                    content.Dispose();
-                }
-
+                content?.Dispose();
                 content = value;
             }
         }
 
         public void Dispose()
         {
-            Content = null!;
+            Content = null;
         }
     }
 }

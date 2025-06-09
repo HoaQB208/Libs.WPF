@@ -1,6 +1,6 @@
-﻿using System.Windows.Input;
+﻿using System;
+using System.Windows.Input;
 
-#pragma warning disable CS8767 // Nullability
 namespace Libs.WPF.MVVM
 {
     public class Command : ICommand
@@ -10,13 +10,13 @@ namespace Libs.WPF.MVVM
         private readonly TimeSpan _throttleTime = TimeSpan.FromSeconds(0.5);
         private DateTime _lastExecutionTime = DateTime.MinValue;
 
-        public Command(Action execute, Func<object, bool> canExecute = null!)
+        public Command(Action execute, Func<object, bool> canExecute = null)
         {
             _execute = execute ?? throw new ArgumentNullException(nameof(execute));
             _canExecute = canExecute;
         }
 
-        public event EventHandler? CanExecuteChanged
+        public event EventHandler CanExecuteChanged
         {
             add { CommandManager.RequerySuggested += value; }
             remove { CommandManager.RequerySuggested -= value; }
@@ -46,13 +46,13 @@ namespace Libs.WPF.MVVM
         private readonly TimeSpan _throttleTime = TimeSpan.FromSeconds(0.3);
         private DateTime _lastExecutionTime = DateTime.MinValue;
 
-        public Command(Action<T> execute, Func<T, bool> canExecute = null!)
+        public Command(Action<T> execute, Func<T, bool> canExecute = null)
         {
             _execute = execute ?? throw new ArgumentNullException(nameof(execute));
             _canExecute = canExecute;
         }
 
-        public event EventHandler? CanExecuteChanged
+        public event EventHandler CanExecuteChanged
         {
             add { CommandManager.RequerySuggested += value; }
             remove { CommandManager.RequerySuggested -= value; }
@@ -73,4 +73,3 @@ namespace Libs.WPF.MVVM
         }
     }
 }
-#pragma warning restore CS8767 // Nullability

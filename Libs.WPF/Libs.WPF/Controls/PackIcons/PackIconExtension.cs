@@ -1,4 +1,5 @@
-﻿using System.Windows.Markup;
+﻿using System;
+using System.Windows.Markup;
 
 namespace Libs.WPF.Controls.PackIcons
 {
@@ -25,7 +26,7 @@ namespace Libs.WPF.Controls.PackIcons
 
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
-            PackIcon result = new(){ Kind = Kind };
+            PackIcon result = new PackIcon(){ Kind = Kind };
             if (Size.HasValue)
             {
                 result.Height = Size.Value;

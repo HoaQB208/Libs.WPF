@@ -3,6 +3,8 @@ using System.Windows.Media.Media3D;
 using System.Windows.Media;
 using System.Windows;
 using Point = System.Windows.Point;
+using System.Collections.Generic;
+using System;
 
 namespace Libs.WPF.Helpers
 {

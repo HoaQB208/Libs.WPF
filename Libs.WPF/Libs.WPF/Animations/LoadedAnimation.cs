@@ -1,5 +1,6 @@
 ﻿using System.Windows.Media.Animation;
 using System.Windows;
+using System;
 
 namespace Libs.WPF.Animations
 {
@@ -7,7 +8,7 @@ namespace Libs.WPF.Animations
     {
         public static void WidthAndOpacity(Window window, double secondsDuration = 0.4)
         {
-            DoubleAnimation widthAnimation = new()
+            DoubleAnimation widthAnimation = new DoubleAnimation()
             {
                 From = 0,
                 To = window.Width,
@@ -16,7 +17,7 @@ namespace Libs.WPF.Animations
             Storyboard.SetTargetProperty(widthAnimation, new PropertyPath("Width"));
             Storyboard.SetTarget(widthAnimation, window);
 
-            DoubleAnimation opacityAnimation = new()
+            DoubleAnimation opacityAnimation = new DoubleAnimation()
             {
                 From = 0,
                 To = 1,
@@ -25,7 +26,7 @@ namespace Libs.WPF.Animations
             Storyboard.SetTargetProperty(opacityAnimation, new PropertyPath("Opacity"));
             Storyboard.SetTarget(opacityAnimation, window);
 
-            Storyboard storyboard = new();
+            Storyboard storyboard = new Storyboard();
             storyboard.Children.Add(widthAnimation);
             storyboard.Children.Add(opacityAnimation);
             storyboard.Begin();
@@ -33,7 +34,7 @@ namespace Libs.WPF.Animations
 
         public static void Opacity(Window window, double secondsDuration = 0.4)
         {
-            DoubleAnimation opacityAnimation = new()
+            DoubleAnimation opacityAnimation = new DoubleAnimation()
             {
                 From = 0,
                 To = 1,
@@ -42,7 +43,7 @@ namespace Libs.WPF.Animations
             Storyboard.SetTargetProperty(opacityAnimation, new PropertyPath("Opacity"));
             Storyboard.SetTarget(opacityAnimation, window);
 
-            Storyboard storyboard = new();
+            Storyboard storyboard = new Storyboard();
             storyboard.Children.Add(opacityAnimation);
             storyboard.Begin();
         }

@@ -1,6 +1,8 @@
 ﻿using System.Windows.Media.Animation;
 using System.Windows.Media;
 using System.Windows;
+using System.Threading.Tasks;
+using System;
 
 namespace Libs.WPF.Animations
 {
@@ -9,7 +11,7 @@ namespace Libs.WPF.Animations
         public static async Task OpacityAndMoveDown(Window window, int milliSecondsDuration = 500)
         {
             // Làm mờ dần
-            DoubleAnimation opacityAnimation = new()
+            DoubleAnimation opacityAnimation = new DoubleAnimation()
             {
                 From = 1,
                 To = 0,
@@ -17,14 +19,14 @@ namespace Libs.WPF.Animations
             };
             Storyboard.SetTargetProperty(opacityAnimation, new PropertyPath("Opacity"));
             Storyboard.SetTarget(opacityAnimation, window);
-            Storyboard storyboard = new();
+            Storyboard storyboard = new Storyboard();
             storyboard.Children.Add(opacityAnimation);
             storyboard.Begin();
 
             // Tạo TranslateTransform để di chuyển cửa sổ xuống dưới
-            TranslateTransform translateTransform = new();
+            TranslateTransform translateTransform = new TranslateTransform();
             window.RenderTransform = translateTransform;
-            DoubleAnimation translateYAnimation = new()
+            DoubleAnimation translateYAnimation = new DoubleAnimation()
             {
                 From = 0,
                 To = window.ActualHeight,
@@ -37,7 +39,7 @@ namespace Libs.WPF.Animations
         public static void OpacityAndMoveDown_Restore(Window window)
         {
             // Khôi phục làm mờ
-            DoubleAnimation opacityAnimation = new()
+            DoubleAnimation opacityAnimation = new DoubleAnimation()
             {
                 From = 0,
                 To = 1,
@@ -45,14 +47,14 @@ namespace Libs.WPF.Animations
             };
             Storyboard.SetTargetProperty(opacityAnimation, new PropertyPath("Opacity"));
             Storyboard.SetTarget(opacityAnimation, window);
-            Storyboard storyboard = new();
+            Storyboard storyboard = new Storyboard();
             storyboard.Children.Add(opacityAnimation);
             storyboard.Begin();
 
             // Khôi phục Y
-            TranslateTransform translateTransform = new();
+            TranslateTransform translateTransform = new TranslateTransform();
             window.RenderTransform = translateTransform;
-            DoubleAnimation translateYAnimation = new()
+            DoubleAnimation translateYAnimation = new DoubleAnimation()
             {
                 From = window.ActualHeight,
                 To = 0,

@@ -1,4 +1,6 @@
-﻿namespace Libs.WPF.Controls.SearchableComboBox
+﻿using System;
+
+namespace Libs.WPF.Controls.SearchableComboBox
 {
     public class SearchableComboBoxSetting
     {

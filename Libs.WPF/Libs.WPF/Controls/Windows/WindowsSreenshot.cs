@@ -1,4 +1,6 @@
-﻿using System.Drawing.Imaging;
+﻿using System;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 using System.Windows.Interop;
 using System.Windows.Media.Imaging;
@@ -21,14 +23,14 @@ namespace Libs.WPF.Controls.Windows
 
         public static void SaveToFile(IntPtr handle_, string pathSaveFile, int paddingLeft = 0, int paddingTop = 0, int paddingRight = 0, int paddingBot = 0)
         {
-            RECT windowRect = new();
+            RECT windowRect = new RECT();
             GetWindowRect(handle_, ref windowRect);
 
             int width = windowRect.m_right - windowRect.m_left - paddingLeft - paddingRight;
             int height = windowRect.m_bottom - windowRect.m_top - paddingTop - paddingBot;
-            Point topLeft = new(windowRect.m_left + paddingLeft, windowRect.m_top + paddingTop);
+            Point topLeft = new Point(windowRect.m_left + paddingLeft, windowRect.m_top + paddingTop);
 
-            Bitmap b = new(width, height);
+            Bitmap b = new Bitmap(width, height);
             Graphics g = Graphics.FromImage(b);
             g.CopyFromScreen(topLeft, new Point(0, 0), new Size(width, height));
             b.Save(pathSaveFile, ImageFormat.Jpeg);
@@ -36,14 +38,14 @@ namespace Libs.WPF.Controls.Windows
 
         public static void ToClipbroad(IntPtr handle_, int paddingLeft = 8, int paddingTop = 2, int paddingRight = 8, int paddingBot = 8)
         {
-            RECT windowRect = new();
+            RECT windowRect = new RECT();
             GetWindowRect(handle_, ref windowRect);
 
             int width = windowRect.m_right - windowRect.m_left - paddingLeft - paddingRight;
             int height = windowRect.m_bottom - windowRect.m_top - paddingTop - paddingBot;
-            Point topLeft = new(windowRect.m_left + paddingLeft, windowRect.m_top + paddingTop);
+            Point topLeft = new Point(windowRect.m_left + paddingLeft, windowRect.m_top + paddingTop);
 
-            Bitmap b = new(width, height);
+            Bitmap b = new Bitmap(width, height);
             Graphics g = Graphics.FromImage(b);
             g.CopyFromScreen(topLeft, new Point(0, 0), new Size(width, height));
 

@@ -1,5 +1,7 @@
 ﻿using Libs.WPF.Animations;
+using System;
 using System.Diagnostics;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -9,16 +11,16 @@ namespace Libs.WPF.Controls.Windows
 {
     public class DarkWindow : Window
     {
-        public DarkWindow(Window owner = null!)
+        public DarkWindow(Window owner = null)
         {
             try
             {
-                ResourceDictionary dict = new() { Source = new Uri("/Libs.WPF;component/Themes/Dark.xaml", UriKind.RelativeOrAbsolute) };
+                ResourceDictionary dict = new ResourceDictionary() { Source = new Uri("/Libs.WPF;component/Themes/Dark.xaml", UriKind.RelativeOrAbsolute) };
                 this.Resources.MergedDictionaries.Add(dict);
             }
             catch (Exception ex)
             {
-                System.Windows.MessageBox.Show("Failed to load theme: " + ex.Message);
+                MessageBox.Show("Failed to load theme: " + ex.Message);
             }
 
             Style = (Style)TryFindResource("DarkWindowStyle");
@@ -107,12 +109,12 @@ namespace Libs.WPF.Controls.Windows
             WindowUtils.ResizeWindow(this, Mouse.GetPosition(this));
         }
 
-        private Button BtnSmallWindow = null!;
-        private Button BtnSnapshot = null!;
-        private Button BtnMinimize = null!;
-        private Button BtnMaximize = null!;
-        private Button BtnClose = null!;
-        private Grid TitleBar = null!;
+        private Button BtnSmallWindow = null;
+        private Button BtnSnapshot = null;
+        private Button BtnMinimize = null;
+        private Button BtnMaximize = null;
+        private Button BtnClose = null;
+        private Grid TitleBar = null;
         private void RegisterComponents()
         {
             BtnSmallWindow = (Button)GetTemplateChild("BtnSmallWindow");

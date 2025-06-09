@@ -2,6 +2,7 @@
 using System.Windows.Data;
 using System.Windows;
 using ProgressBar = System.Windows.Controls.ProgressBar;
+using System;
 
 namespace Libs.WPF.Converters
 {

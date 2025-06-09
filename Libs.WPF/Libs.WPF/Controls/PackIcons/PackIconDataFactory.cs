@@ -1,4 +1,6 @@
-﻿namespace Libs.WPF.Controls.PackIcons
+﻿using System.Collections.Generic;
+
+namespace Libs.WPF.Controls.PackIcons
 {
     internal class PackIconDataFactory
     {

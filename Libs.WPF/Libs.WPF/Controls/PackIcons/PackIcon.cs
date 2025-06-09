@@ -1,12 +1,14 @@
 ﻿using System.ComponentModel;
 using System.Windows.Media;
 using System.Windows;
+using System;
+using System.Collections.Generic;
 
 namespace Libs.WPF.Controls.PackIcons
 {
     public class PackIcon : System.Windows.Controls.Control
     {
-        private static readonly Lazy<IDictionary<PackIconKind, string>> _dataIndex = new(PackIconDataFactory.Create);
+        private static readonly Lazy<IDictionary<PackIconKind, string>> _dataIndex = new Lazy<IDictionary<PackIconKind, string>>(PackIconDataFactory.Create);
 
         static PackIcon()
         {
@@ -49,8 +51,8 @@ namespace Libs.WPF.Controls.PackIcons
 
         private void UpdateData()
         {
-            string data = null!;
-            _dataIndex.Value?.TryGetValue(Kind, out data!);
+            string data = null;
+            _dataIndex.Value?.TryGetValue(Kind, out data);
             Data = data;
         }
     }

@@ -1,4 +1,6 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
+using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 using System.Windows;
 using Application = System.Windows.Application;
 using Cursor = System.Windows.Input.Cursor;
@@ -75,10 +77,10 @@ namespace Libs.WPF.Controls.Windows
                     {
                         if (w != null && w.GetType().Name == typeName) return w;
                     }
-                    return null!;
+                    return null;
                 });
             }
-            return null!;
+            return null;
         }
 
 

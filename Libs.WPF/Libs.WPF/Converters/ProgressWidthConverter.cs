@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 using System.Windows.Data;
 
 namespace Libs.WPF.Converters
@@ -10,10 +11,15 @@ namespace Libs.WPF.Converters
         // values[2] = Maximum (optional)
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            if (values.Length < 2 ||
-                values[0] is not double actualWidth ||
-                values[1] is not double value)
+            if (values.Length < 2)
                 return 0;
+
+            if (!(values[0] is double) || !(values[1] is double))
+                return 0;
+
+            double actualWidth = (double)values[0];
+            double value = (double)values[1];
+
 
             double maximum = 100;
             if (values.Length > 2 && values[2] is double max)

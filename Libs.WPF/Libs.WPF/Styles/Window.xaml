@@ -104,5 +104,6 @@
         </Setter>
     </Style>
 
+    <Style  TargetType="Window" BasedOn="{StaticResource DarkWindowStyle}"/>
 
 </ResourceDictionary>

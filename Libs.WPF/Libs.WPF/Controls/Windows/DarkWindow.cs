@@ -51,6 +51,8 @@ namespace Libs.WPF.Controls.Windows
         public bool IsShowSnapshotButton { get; set; } = false;
         public bool IsShowSmallWindowButton { get; set; } = false;
         public bool IsHideTitleBar { get; set; } = false;
+        public bool IsShowAnimation { get; set; } = true;
+        public double ShowAnimationSeconds { get; set; } = 0.4;
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -71,7 +73,7 @@ namespace Libs.WPF.Controls.Windows
             WindowUtils.FitToScreenSize(this);
 
             // Hiệu ứng
-            LoadedAnimation.WidthAndOpacity(this);
+            if(IsShowAnimation) LoadedAnimation.WidthAndOpacity(this, secondsDuration: ShowAnimationSeconds);
 
             if (IsHideTitleBar) TitleBar.Visibility = Visibility.Collapsed;
 

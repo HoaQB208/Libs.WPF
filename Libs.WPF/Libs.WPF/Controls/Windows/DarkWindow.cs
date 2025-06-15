@@ -18,11 +18,7 @@ namespace Libs.WPF.Controls.Windows
                 ResourceDictionary dict = new ResourceDictionary() { Source = new Uri("/Libs.WPF;component/Themes/Dark.xaml", UriKind.RelativeOrAbsolute) };
                 this.Resources.MergedDictionaries.Add(dict);
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Failed to load theme: " + ex.Message);
-            }
-
+            catch (Exception ex) { MessageBox.Show("Failed to load theme: " + ex.Message); }
             Style = (Style)TryFindResource("DarkWindowStyle");
 
             if (owner is null) WindowStartupLocation = WindowStartupLocation.CenterScreen;
@@ -73,7 +69,7 @@ namespace Libs.WPF.Controls.Windows
             WindowUtils.FitToScreenSize(this);
 
             // Hiệu ứng
-            if(IsShowAnimation) LoadedAnimation.WidthAndOpacity(this, secondsDuration: ShowAnimationSeconds);
+            if (IsShowAnimation) LoadedAnimation.WidthAndOpacity(this, secondsDuration: ShowAnimationSeconds);
 
             if (IsHideTitleBar) TitleBar.Visibility = Visibility.Collapsed;
 

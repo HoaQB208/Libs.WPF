@@ -8,4 +8,5 @@
     <converters:ProgressBarToStringValue x:Key="ProgressBarToStringValue" />
     <converters:ProgressBarToVisibility x:Key="ProgressBarToVisibility" />
     <converters:ProgressWidthConverter x:Key="ProgressWidthConverter" />
+    <converters:BoolInversion x:Key="BoolInversion" />
 </ResourceDictionary>

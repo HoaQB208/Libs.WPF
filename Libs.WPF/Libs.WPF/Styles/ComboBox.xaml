@@ -239,6 +239,8 @@
                 Value="{StaticResource ForegroundColor}" />
         <Setter Property="Height"
                 Value="28" />
+        <Setter Property="Margin"
+                Value="0 2 0 2" />
         <Setter Property="ItemsPanel">
             <Setter.Value>
                 <ItemsPanelTemplate>

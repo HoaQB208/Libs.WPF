@@ -20,7 +20,7 @@
                                    DockPanel.Dock="Top"
                                    Foreground="{TemplateBinding Foreground}"
                                    FontWeight="Medium"
-                                   Margin="0 -14 0 0"
+                                   Margin="0 -13 0 0"
                                    Padding="8 0 8 0"
                                    Background="{StaticResource BackgroundColor}"
                                    HorizontalAlignment="Center" />
@@ -35,7 +35,44 @@
         </Setter>
     </Style>
 
-    <Style x:Key="PanelGroupBoxStyle" TargetType="GroupBox">
+    <Style x:Key="CustomHeaderStyle"
+           TargetType="GroupBox">
+        <Setter Property="Margin"
+                Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="GroupBox">
+                    <Border BorderBrush="#569DE5"
+                            BorderThickness="0.5"
+                            Margin="0 14 0 0"
+                            Background="{StaticResource BackgroundColor}">
+                        <Grid>
+                            <!-- Nội dung Header -->
+                            <Border Background="{StaticResource BackgroundColor}"
+                                    Margin="0 -15 0 0"
+                                    VerticalAlignment="Top"
+                                    HorizontalAlignment="Center">
+                                <ContentPresenter ContentSource="Header"
+                                                  RecognizesAccessKey="True"
+                                                  HorizontalAlignment="Center" />
+                            </Border>
+
+                            <!-- Nội dung chính -->
+                            <ContentPresenter ContentSource="Content"
+                                              Margin="4"
+                                              VerticalAlignment="Top"
+                                              Grid.Row="1" />
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+    <Style x:Key="PanelGroupBoxStyle"
+           TargetType="GroupBox">
         <Setter Property="Margin"
                 Value="0" />
         <Setter Property="Template">
@@ -63,9 +100,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-
-
-    
 
 
 </ResourceDictionary>

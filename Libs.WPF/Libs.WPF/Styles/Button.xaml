@@ -36,7 +36,7 @@
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
                             CornerRadius="4">
-                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        <ContentPresenter HorizontalAlignment="Center"
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                           Margin="{TemplateBinding Padding}" />
                     </Border>
@@ -197,18 +197,18 @@
                             BorderThickness="{TemplateBinding BorderThickness}"
                             CornerRadius="4">
                         <StackPanel Orientation="Horizontal"
-                                    Margin="6 4 6 4">
+                                    HorizontalAlignment="Center"
+                                    Margin="6 4 6 2">
                             <icons:PackIcon x:Name="PackIcon"
                                             Width="{TemplateBinding Height}"
                                             Height="{TemplateBinding Height}"
-                                            Margin="0 1 0 0"
                                             VerticalAlignment="Center"
+                                            Margin="0 0 0 2"
                                             Foreground="{StaticResource InverseForegroundColor}"
                                             SnapsToDevicePixels="False"
                                             Kind="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Tag}" />
                             <Label Content="{TemplateBinding Content}"
-                                   Foreground="{StaticResource InverseForegroundColor}"
-                                   VerticalAlignment="Center" />
+                                   Foreground="{StaticResource InverseForegroundColor}"/>
                         </StackPanel>
                     </Border>
                     <ControlTemplate.Triggers>

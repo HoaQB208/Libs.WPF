@@ -4,6 +4,7 @@
         <ResourceDictionary Source="../Controls/PackIcons/PackIconStyles.xaml" />
         <ResourceDictionary Source="../Styles/TextBlock.xaml" />
         <ResourceDictionary Source="../Styles/Label.xaml" />
+        <ResourceDictionary Source="../Styles/Button.xaml" />
         <ResourceDictionary Source="../Styles/TextBox.xaml" />
         <ResourceDictionary Source="../Styles/PackIcon.xaml" />
         <ResourceDictionary Source="../Styles/CheckBox.xaml" />

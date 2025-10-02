@@ -244,11 +244,11 @@
                 </Grid.ColumnDefinitions>
                 <StackPanel>
                     <!--Pick, not selected-->
-                    <ComboBox ItemsSource="{Binding StringList}"/>
+                    <ComboBox ItemsSource="{Binding StringList}" />
                     <!--Pick, selected-->
                     <ComboBox ItemsSource="{Binding StringList}"
                               SelectedItem="{Binding SelectedStringItem, UpdateSourceTrigger=PropertyChanged}"
-                              Margin="0 4 0 0"/>
+                              Margin="0 4 0 0" />
                     <!--Searchable, not selected-->
                     <scbb:SearchableComboBox ItemsSource="{Binding StringList}"
                                              Hint="Select or Search"
@@ -518,8 +518,8 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <StackPanel>
-                    <ProgressBar Value="33"/>
-                    
+                    <ProgressBar Value="33" />
+
                     <ProgressBar Value="33"
                                  Style="{StaticResource BitcoinProgressBar}"
                                  Margin="0 8 0 0" />
@@ -570,6 +570,7 @@
             </Grid>
 
 
+            <!--Test-->
             <Grid Margin="0 32 0 0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
@@ -577,7 +578,8 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <StackPanel>
-
+                    <Button Content="  Test  "
+                            Click="Button_Click" />
                 </StackPanel>
                 <!--Disabled-->
                 <StackPanel Grid.Column="2"

@@ -279,10 +279,7 @@
                                 </StackPanel>
 
                                 <!--  Nút điều khiển: Close  -->
-                                <Button x:Name="BtnExit"
-                                        Grid.Column="1"
-                                        Height="32"
-                                        Style="{StaticResource CloseStyle}" />
+
                             </Grid>
 
                             <!--  Hoạt họa và Nội dung xử lý  -->
@@ -291,10 +288,15 @@
                                         HorizontalAlignment="Center">
 
 
-                                <!--Status-->
-                                <Label Content="{Binding Status, UpdateSourceTrigger=PropertyChanged}"
+                                <!--MainStep-->
+                                <Label Content="{Binding MainStep, UpdateSourceTrigger=PropertyChanged}"
                                        HorizontalContentAlignment="Center"
                                        Foreground="{StaticResource HighlightColor}"
+                                       Background="Transparent" />
+                                <!--SubStep-->
+                                <Label Content="{Binding SubStep, UpdateSourceTrigger=PropertyChanged}"
+                                       HorizontalContentAlignment="Center"
+                                       Foreground="White"
                                        Background="Transparent" />
                             </StackPanel>
 

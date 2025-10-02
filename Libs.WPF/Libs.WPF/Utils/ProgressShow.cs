@@ -12,15 +12,27 @@ namespace Libs.WPF.Utils
             _owner = owner;
         }
 
-        // Status
-        private string _Status;
-        public string Status
+        // MainStep
+        private string _MainStep;
+        public string MainStep
         {
-            get { return _Status; }
+            get { return _MainStep; }
             set
             {
-                _Status = value;
-                OnPropertyChanged(nameof(Status));
+                _MainStep = value;
+                OnPropertyChanged(nameof(MainStep));
+            }
+        }
+
+        // SubStep
+        private string _SubStep;
+        public string SubStep
+        {
+            get { return _SubStep; }
+            set
+            {
+                _SubStep = value;
+                OnPropertyChanged(nameof(SubStep));
             }
         }
 
@@ -46,6 +58,11 @@ namespace Libs.WPF.Utils
         public void Show()
         {
             View?.Show();
+        }
+
+        public void Close()
+        {
+            View?.Close();
         }
     }
 }

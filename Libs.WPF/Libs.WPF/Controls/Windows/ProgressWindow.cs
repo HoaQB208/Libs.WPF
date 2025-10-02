@@ -2,7 +2,6 @@
 using System;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace Libs.WPF.Controls.Windows
@@ -38,7 +37,6 @@ namespace Libs.WPF.Controls.Windows
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
-            RegisterComponents();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -70,19 +68,6 @@ namespace Libs.WPF.Controls.Windows
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             WindowUtils.ResizeWindow(this, Mouse.GetPosition(this));
-        }
-
-        private Button BtnClose;
-        private TextBox TbMessage;
-        private void RegisterComponents()
-        {
-            BtnClose = (Button)GetTemplateChild("BtnExit");
-            if (BtnClose != null) BtnClose.Click += BtnExit_Click;
-        }
-
-        private void BtnExit_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
 
         protected override void OnPreviewKeyDown(KeyEventArgs e)

@@ -11,39 +11,39 @@ namespace Libs.WPF.Controls.Menu
         }
 
         // Kind
-        public static readonly DependencyProperty KindProperty =
-        DependencyProperty.Register(nameof(Kind), typeof(PackIconKind), typeof(MenuRadioButton), new PropertyMetadata(default(PackIconKind)));
-
+        public static readonly DependencyProperty KindProperty = DependencyProperty.Register(nameof(Kind), typeof(PackIconKind), typeof(MenuRadioButton), new PropertyMetadata(default(PackIconKind)));
         public PackIconKind Kind
         {
             get => (PackIconKind)GetValue(KindProperty);
             set => SetValue(KindProperty, value);
         }
 
-        // ContentEN
-        public static readonly DependencyProperty ContentENProperty =
-            DependencyProperty.Register(nameof(ContentEN), typeof(string), typeof(MenuRadioButton), new PropertyMetadata(string.Empty));
-
-        public string ContentEN
+        // MainContent
+        public static readonly DependencyProperty MainContentProperty = DependencyProperty.Register(nameof(MainContent), typeof(string), typeof(MenuRadioButton), new PropertyMetadata(string.Empty));
+        public string MainContent
         {
-            get => (string)GetValue(ContentENProperty);
-            set => SetValue(ContentENProperty, value);
+            get => (string)GetValue(MainContentProperty);
+            set => SetValue(MainContentProperty, value);
         }
 
-        // ContentVI
-        public static readonly DependencyProperty ContentVIProperty =
-            DependencyProperty.Register(nameof(ContentVI), typeof(string), typeof(MenuRadioButton), new PropertyMetadata(string.Empty));
-
-        public string ContentVI
+        // SubContent
+        public static readonly DependencyProperty SubContentProperty = DependencyProperty.Register(nameof(SubContent), typeof(string), typeof(MenuRadioButton), new PropertyMetadata(string.Empty));
+        public string SubContent
         {
-            get => (string)GetValue(ContentVIProperty);
-            set => SetValue(ContentVIProperty, value);
+            get => (string)GetValue(SubContentProperty);
+            set => SetValue(SubContentProperty, value);
+        }
+
+        // SubContentVisibility
+        public static readonly DependencyProperty SubContentVisibilityProperty = DependencyProperty.Register(nameof(SubContentVisibility), typeof(Visibility), typeof(MenuRadioButton), new FrameworkPropertyMetadata(Visibility.Visible, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+        public Visibility SubContentVisibility
+        {
+            get => (Visibility)GetValue(SubContentVisibilityProperty);
+            set => SetValue(SubContentVisibilityProperty, value);
         }
 
         // IsChecked
-        public static readonly DependencyProperty IsCheckedProperty =
-            DependencyProperty.Register(nameof(IsChecked), typeof(bool?), typeof(MenuRadioButton), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
-
+        public static readonly DependencyProperty IsCheckedProperty = DependencyProperty.Register(nameof(IsChecked), typeof(bool?), typeof(MenuRadioButton), new FrameworkPropertyMetadata(false, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
         public bool? IsChecked
         {
             get => (bool?)GetValue(IsCheckedProperty);
@@ -51,9 +51,7 @@ namespace Libs.WPF.Controls.Menu
         }
 
         // GroupName
-        public static readonly DependencyProperty GroupNameProperty =
-            DependencyProperty.Register(nameof(GroupName), typeof(string), typeof(MenuRadioButton), new PropertyMetadata("MenuGroup"));
-
+        public static readonly DependencyProperty GroupNameProperty = DependencyProperty.Register(nameof(GroupName), typeof(string), typeof(MenuRadioButton), new PropertyMetadata("MenuGroup"));
         public string GroupName
         {
             get => (string)GetValue(GroupNameProperty);
@@ -61,9 +59,7 @@ namespace Libs.WPF.Controls.Menu
         }
 
         // Size
-        public static readonly DependencyProperty SizeProperty =
-            DependencyProperty.Register(nameof(Size), typeof(double), typeof(MenuRadioButton), new PropertyMetadata(36.0));
-
+        public static readonly DependencyProperty SizeProperty = DependencyProperty.Register(nameof(Size), typeof(double), typeof(MenuRadioButton), new PropertyMetadata(36.0));
         public double Size
         {
             get => (double)GetValue(SizeProperty);

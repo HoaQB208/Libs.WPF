@@ -18,9 +18,10 @@
                             Height="{Binding Size, ElementName=root}"/>
             <StackPanel Grid.Column="1"
                         VerticalAlignment="Center">
-                <Label Content="{Binding ContentEN, ElementName=root}"
+                <Label Content="{Binding MainContent, ElementName=root}"
                        Margin="4 0 4 0"/>
-                <Label Content="{Binding ContentVI, ElementName=root}"
+                <Label Content="{Binding SubContent, ElementName=root}"
+                       Visibility="{Binding SubContentVisibility, ElementName=root}"
                        Style="{StaticResource SubLabelStyle}" />
             </StackPanel>
         </Grid>

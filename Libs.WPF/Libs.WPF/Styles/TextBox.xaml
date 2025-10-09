@@ -10,6 +10,8 @@
     <!--BaseTextBoxStyle-->
     <Style x:Key="BaseTextBoxStyle"
            TargetType="TextBox">
+        <Setter Property="Height"
+                Value="28" />
         <Setter Property="AcceptsReturn"
                 Value="False" />
         <Setter Property="VerticalAlignment"

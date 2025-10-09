@@ -202,6 +202,7 @@
                             CornerRadius="4">
                         <StackPanel Orientation="Horizontal"
                                     HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
                                     Margin="6 4 6 2">
                             <icons:PackIcon x:Name="PackIcon"
                                             Width="{TemplateBinding Height}"
@@ -212,6 +213,7 @@
                                             SnapsToDevicePixels="False"
                                             Kind="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Tag}" />
                             <Label Content="{TemplateBinding Content}"
+                                   Margin="0 0 0 4"
                                    Foreground="{StaticResource InverseForegroundColor}"/>
                         </StackPanel>
                     </Border>

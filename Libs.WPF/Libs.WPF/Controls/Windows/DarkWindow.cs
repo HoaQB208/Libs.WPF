@@ -52,6 +52,12 @@ namespace Libs.WPF.Controls.Windows
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            if (this.Owner != null)
+            {
+                this.Left = this.Owner.Left + (this.Owner.Width - this.Width) / 2;
+                this.Top = this.Owner.Top + (this.Owner.Height - this.Height) / 2;
+            }
+
             var topMost = this.Topmost;
             this.Topmost = true;
 

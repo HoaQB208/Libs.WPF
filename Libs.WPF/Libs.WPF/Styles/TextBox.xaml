@@ -58,10 +58,14 @@
     <Style x:Key="MultiLineTextBoxStyle"
            TargetType="TextBox"
            BasedOn="{StaticResource BaseTextBoxStyle}">
+        <Setter Property="Height"
+                Value="Auto" />
         <Setter Property="AcceptsReturn"
                 Value="True" />
         <Setter Property="TextWrapping"
                 Value="Wrap" />
+        <Setter Property="VerticalAlignment"
+                Value="Stretch" />
         <Setter Property="VerticalContentAlignment"
                 Value="Top" />
         <Setter Property="VerticalScrollBarVisibility"

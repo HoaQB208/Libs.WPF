@@ -192,6 +192,7 @@
                                      x:Name="TbMessage"
                                      Style="{StaticResource MultiLineTextBoxStyle}"
                                      HorizontalContentAlignment="Center"
+                                     VerticalAlignment="Stretch"
                                      VerticalContentAlignment="Center"
                                      IsReadOnly="True"
                                      BorderThickness="0"

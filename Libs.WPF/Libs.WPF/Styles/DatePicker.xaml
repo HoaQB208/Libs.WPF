@@ -70,6 +70,7 @@
                 <ControlTemplate TargetType="DatePicker">
                     <Border x:Name="PART_Border"
                             Padding="0"
+                            Margin="0 2 0 0"
                             Background="{StaticResource InputBackgroundColor}"
                             BorderBrush="{StaticResource InputBorderColor}"
                             BorderThickness="1"
@@ -137,6 +138,7 @@
                                                VerticalContentAlignment="Center"
                                                Focusable="{TemplateBinding Focusable}"
                                                FontWeight="Normal"
+                                               Height="26"
                                                Style="{StaticResource DatePickerTextBoxStyle}" />
                             <Button x:Name="PART_Button"
                                     Grid.Column="1"

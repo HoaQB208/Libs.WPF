@@ -16,7 +16,7 @@ namespace Libs.WPF.Controls.Windows
         {
             if (window.Height > SystemParameters.PrimaryScreenHeight || window.Width > SystemParameters.PrimaryScreenWidth)
             {
-                if (window.Height > SystemParameters.PrimaryScreenHeight) window.Height = SystemParameters.PrimaryScreenHeight * 0.95;
+                if (window.Height > SystemParameters.PrimaryScreenHeight) window.Height = SystemParameters.PrimaryScreenHeight * 0.9;
                 if (window.Width > SystemParameters.PrimaryScreenWidth) window.Width = SystemParameters.PrimaryScreenWidth * 0.95;
                 // Chỉnh lại vị trí giữa màn hình
                 window.Top = (SystemParameters.PrimaryScreenHeight - window.Height) / 2;
@@ -173,8 +173,12 @@ namespace Libs.WPF.Controls.Windows
 
         private static void ResizeWindow(Window window, int direction)
         {
-            ReleaseCapture();
-            SendMessage(new System.Windows.Interop.WindowInteropHelper(window).Handle, WM_NCLBUTTONDOWN, direction, 0);
+            try
+            {
+                ReleaseCapture();
+                SendMessage(new System.Windows.Interop.WindowInteropHelper(window).Handle, WM_NCLBUTTONDOWN, direction, 0);
+            }
+            catch { }
         }
 
         public static void ResizeWindow(Window window, System.Windows.Point cursorPoint)

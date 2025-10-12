@@ -185,6 +185,55 @@
         </Setter>
     </Style>
 
+    <!--IconTextHelperButtonStyle-->
+    <Style x:Key="IconTextHelperButtonStyle"
+           TargetType="Button"
+           BasedOn="{StaticResource BaseButton}">
+        <Setter Property="Foreground"
+                Value="{StaticResource HighlightColor}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Width="{TemplateBinding Width}"
+                            Height="{TemplateBinding Height}"
+                            Background="Transparent">
+                        <StackPanel Orientation="Horizontal">
+                            <icons:PackIcon x:Name="icon"
+                                            Width="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ButtonHelper.IconSize)}"
+                                            Height="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(helper:ButtonHelper.IconSize)}"
+                                            Margin="-3 1 0 0"
+                                            Foreground="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Foreground}"
+                                            SnapsToDevicePixels="False"
+                                            Kind="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Tag}" />
+                            <Label Content="{TemplateBinding Content}"
+                                   VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver"
+                                 Value="True">
+                            <Setter TargetName="icon"
+                                    Property="Foreground"
+                                    Value="{StaticResource MouseOverButtonColor}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed"
+                                 Value="True">
+                            <Setter TargetName="icon"
+                                    Property="Foreground"
+                                    Value="{StaticResource PressedButtonColor}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled"
+                                 Value="False">
+                            <Setter TargetName="icon"
+                                    Property="Foreground"
+                                    Value="{StaticResource DisableBackgroundColor}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <!--IconTextBorderButtonStyle-->
     <Style x:Key="IconTextBorderButtonStyle"
            TargetType="Button"

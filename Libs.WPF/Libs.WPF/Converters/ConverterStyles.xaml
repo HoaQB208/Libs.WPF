@@ -10,4 +10,5 @@
     <converters:ProgressWidthConverter x:Key="ProgressWidthConverter" />
     <converters:BoolInversion x:Key="BoolInversion" />
     <converters:EnumDescriptionConverter x:Key="EnumDescriptionConverter" />
+    <converters:TrueToVisible x:Key="TrueToVisible" />
 </ResourceDictionary>

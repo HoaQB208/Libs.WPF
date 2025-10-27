@@ -1,6 +1,7 @@
 ﻿using Libs.WPF.Controls.Windows;
 using Libs.WPF.Utils;
 using System.Windows;
+using Test.WPF.Subs;
 
 namespace Test.WPF
 {
@@ -25,11 +26,16 @@ namespace Test.WPF
             do
             {
 
-                pro.Status = DateTime.Now.ToString();
+                pro.MainStep = DateTime.Now.ToString();
                 await Task.Delay(1000);
 
 
             } while (true);
+        }
+
+        private void BtnDefaultButton_Click(object sender, RoutedEventArgs e)
+        {
+            new ViewShow().Show();
         }
     }
 }

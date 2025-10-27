@@ -117,7 +117,9 @@
                 <StackPanel>
                     <Button Content="Sub Button"
                             Style="{StaticResource SubButtonStyle}" />
-                    <Button Content="Default Button" />
+                    <Button Content="Default Button"
+                            x:Name="BtnDefaultButton"
+                            Click="BtnDefaultButton_Click"/>
                     <Button Content="Highlight Button"
                             Style="{StaticResource HighlightButtonStyle}" />
                     <Button Tag="Tune"
@@ -397,16 +399,16 @@
                             <!--Features-->
                             <menu:MenuRadioButton Kind="ViewDashboardOutline"
                                                   IsChecked="True"
-                                                  ContentEN="Features"
-                                                  ContentVI="Chức năng" />
+                                                  MainContent="Features"
+                                                  SubContent="Chức năng" />
                             <!--Setting-->
                             <menu:MenuRadioButton Kind="Tune"
-                                                  ContentEN="Setting"
-                                                  ContentVI="Thiết lập" />
+                                                  MainContent="Setting"
+                                                  SubContent="Thiết lập" />
                             <!--Help-->
                             <menu:MenuRadioButton Kind="HelpCircleOutline"
-                                                  ContentEN="Help"
-                                                  ContentVI="Trợ giúp" />
+                                                  MainContent="Help"
+                                                  SubContent="Trợ giúp" />
                         </StackPanel>
 
                         <!--Pages-->
@@ -428,16 +430,16 @@
                             <!--Features-->
                             <menu:MenuRadioButton Kind="ViewDashboardOutline"
                                                   IsChecked="True"
-                                                  ContentEN="Features"
-                                                  ContentVI="Chức năng" />
+                                                  MainContent="Features"
+                                                  SubContent="Chức năng" />
                             <!--Setting-->
                             <menu:MenuRadioButton Kind="Tune"
-                                                  ContentEN="Setting"
-                                                  ContentVI="Thiết lập" />
+                                                  MainContent="Setting"
+                                                  SubContent="Thiết lập" />
                             <!--Help-->
                             <menu:MenuRadioButton Kind="HelpCircleOutline"
-                                                  ContentEN="Help"
-                                                  ContentVI="Trợ giúp" />
+                                                  MainContent="Help"
+                                                  SubContent="Trợ giúp" />
                         </StackPanel>
 
                         <!--Pages-->

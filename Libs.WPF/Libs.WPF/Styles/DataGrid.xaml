@@ -35,7 +35,7 @@
         <Setter Property="VerticalGridLinesBrush"
                 Value="#333" />
         <Setter Property="BorderBrush"
-                Value="#569DE5" />
+                Value="{StaticResource MouseOverItemBorderColor}" />
         <Setter Property="BorderThickness"
                 Value="0.3" />
         <Setter Property="Background"
@@ -98,11 +98,11 @@
                         <Trigger Property="IsSelected"
                                  Value="True">
                             <Setter Property="Background"
-                                    Value="{StaticResource MouseOverItemBorderColor}" />
+                                    Value="{Binding BorderBrush, RelativeSource={RelativeSource AncestorType=DataGrid}}" />
                             <Setter Property="Foreground"
                                     Value="Black" />
                         </Trigger>
-                      
+
                     </Style.Triggers>
                 </Style>
             </Setter.Value>
@@ -123,7 +123,7 @@
                         <Trigger Property="IsSelected"
                                  Value="True">
                             <Setter Property="Background"
-                                    Value="{StaticResource MouseOverItemBorderColor}" />
+                                    Value="{Binding BorderBrush, RelativeSource={RelativeSource AncestorType=DataGrid}}" />
                         </Trigger>
                         <Trigger Property="IsMouseOver"
                                  Value="True">
@@ -141,6 +141,6 @@
     <Style TargetType="DataGrid"
            BasedOn="{StaticResource BaseDataGrid}">
     </Style>
-    
-    
+
+
 </ResourceDictionary>

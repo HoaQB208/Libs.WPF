@@ -8,7 +8,7 @@ namespace Libs.WPF.Controls.Windows
 {
     public class ProgressWindow : Window
     {
-        public ProgressWindow(Window owner = null, string title = "Progress")
+        public ProgressWindow(Window owner = null, string title = "Progress...")
         {
             this.Title = title;
 

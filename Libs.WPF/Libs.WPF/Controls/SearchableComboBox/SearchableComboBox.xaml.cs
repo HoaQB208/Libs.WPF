@@ -24,6 +24,37 @@ namespace Libs.WPF.Controls.SearchableComboBox
 
         Predicate<object> defaultItemsFilter;
 
+        bool isUserTyping;
+        bool isInitializing = true;
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+
+            if (EditableTextBox != null)
+            {
+                EditableTextBox.PreviewTextInput += (_, __) => isUserTyping = true;
+                EditableTextBox.PreviewKeyDown += (_, __) => isUserTyping = true;
+            }
+
+            Dispatcher.BeginInvoke(
+                                    new Action(() =>
+                                    {
+                                        isInitializing = false;
+                                    }),
+                                    System.Windows.Threading.DispatcherPriority.Loaded
+            );
+
+        }
+
+        protected override void OnDropDownClosed(EventArgs e)
+        {
+            base.OnDropDownClosed(e);
+            isUserTyping = false;
+        }
+
+
+
         public static readonly DependencyProperty HintProperty = DependencyProperty.Register(
             "Hint",
             typeof(string),
@@ -187,6 +218,9 @@ namespace Libs.WPF.Controls.SearchableComboBox
 
         void UpdateSuggestionList()
         {
+            if (isInitializing) return;
+            if (!isUserTyping) return;
+
             string text = Text;
 
             if (text == previousText) return;

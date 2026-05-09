@@ -13,4 +13,5 @@
     <converters:TrueToVisible x:Key="TrueToVisible" />
     <converters:TrueToCollapsed x:Key="TrueToCollapsed" />
     <converters:IsGreaterThanZeroConverter x:Key="IsGreaterThanZeroConverter" />
+    <converters:NullToFalse x:Key="NullToFalse" />
 </ResourceDictionary>
